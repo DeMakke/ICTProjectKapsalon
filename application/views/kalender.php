@@ -1,169 +1,132 @@
 <!--*********************** KALENDER pagina na inloggen ***************************-->
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta content="text/html; charset=utf-8" />
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>Welkom <?= $this->session->userdata('username') ?></title>
-    <link rel = "stylesheet" type = "text/css" href = "<?php echo base_url(); ?>/assets/css/style.css">
-  </head>
-  <body>
-    <div id="header">
-	   <div id="left">
-      <label>Admin Pagina</label>
-     </div>
-     <div id="right">
-    	 <div id="content">
-        	Welkom <?= $this->session->userdata('username') ?>&nbsp;, <a href="<?= site_url('home/logout') ?>">Logout</a>
-       </div>
-     </div>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="<?php echo base_url(); ?>/assets/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="<?php echo base_url(); ?>/assets/css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="<?php echo base_url(); ?>/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Admin Pagina</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?= $this->session->userdata('username') ?> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profiel</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="<?= site_url('home/logout') ?>"><i class="fa fa-fw fa-power-off"></i> Uitloggen</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="home"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li class="active">
+                        <a href="Kalender"><i class="fa fa-fw fa-bar-chart-o"></i> Kalender</a>
+                    </li>
+                    <li>
+                        <a href="Klanten"><i class="fa fa-fw fa-table"></i> Klanten</a>
+                    </li>
+        
+                    <li>
+                        <a href="afspraak"><i class="fa fa-fw fa-edit"></i> Afspraak</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Kalender
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> Kalender
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+               
+
+            </div>
+            <!-- /.container-fluid -->
+            
+
+        </div>
+        <!-- /#page-wrapper -->
+
     </div>
-  <ul>
-    <li><a href="home">Home</a></li>
-    <li><a href="kalender">Kalender</a></li>
-    <li><a href="klanten">Klanten</a></li>
-    <li><a href="afspraak">Afspraak maken</a></li>
-  </ul>
-  <br/>
-  <center>
-    <?php
-    /* date settings */
-$month = (int) ($_GET['month'] ? $_GET['month'] : date('m'));
-$year = (int)  ($_GET['year'] ? $_GET['year'] : date('Y'));
+    <!-- /#wrapper -->
 
-/* select month control */
-/*$select_month_control = '<select name="month" id="month">';
-for($x = 1; $x <= 12; $x++) {
-  $select_month_control.= '<option value="'.$x.'"'.($x != $month ? '' : ' selected="selected"').'>'.date('F',mktime(0,0,0,$x,1,$year)).'</option>';
-}
-$select_month_control.= '</select>';*/
+    <!-- jQuery -->
+    <script src="<?php echo base_url(); ?>/assets/js/jquery.js"></script>
 
-/* select year control */
-/*$year_range = 7;
-$select_year_control = '<select name="year" id="year">';
-for($x = ($year-floor($year_range/2)); $x <= ($year+floor($year_range/2)); $x++) {
-  $select_year_control.= '<option value="'.$x.'"'.($x != $year ? '' : ' selected="selected"').'>'.$x.'</option>';
-}
-$select_year_control.= '</select>';*/
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo base_url(); ?>/assets/js/bootstrap.min.js"></script>
 
-/* "next month" control */
-$next_month_link = '<a href="?month='.($month != 12 ? $month + 1 : 1).'&year='.($month != 12 ? $year : $year + 1).'" class="control">Volgende Maand >></a>';
+    <!-- Morris Charts JavaScript -->
+    <script src="<?php echo base_url(); ?>/assets/js/plugins/morris/raphael.min.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/js/plugins/morris/morris.min.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/js/plugins/morris/morris-data.js"></script>
 
-/* "previous month" control */
-$previous_month_link = '<a href="?month='.($month != 1 ? $month - 1 : 12).'&year='.($month != 1 ? $year : $year - 1).'" class="control"><<  Vorige Maand</a>';
+</body>
 
-/* bringing the controls together */
-$controls = '<form method="get">'.$select_month_control.$select_year_control.$previous_month_link.'     '.$next_month_link.' </form>';
-
-echo $controls;
-      /* draws a calendar */
-function draw_calendar($month,$year){
-
-  /* draw table */
-  $calendar = '<table cellpadding="0" cellspacing="0" class="calendar">';
-
-  /* table headings */
-  $headings = array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
-  $calendar.= '<tr class="calendar-row"><td class="calendar-day-head">'.implode('</td><td class="calendar-day-head">',$headings).'</td></tr>';
-
-  /* days and weeks vars now ... */
-  $running_day = date('w',mktime(0,0,0,$month,1,$year));
-  $days_in_month = date('t',mktime(0,0,0,$month,1,$year));
-  $days_in_this_week = 1;
-  $day_counter = 0;
-  $dates_array = array();
-
-  /* row for week one */
-  $calendar.= '<tr class="calendar-row">';
-
-  /* print "blank" days until the first of the current week */
-  for($x = 0; $x < $running_day; $x++):
-    $calendar.= '<td class="calendar-day-np"> </td>';
-    $days_in_this_week++;
-  endfor;
-
-  /* keep going with days.... */
-  for($list_day = 1; $list_day <= $days_in_month; $list_day++):
-    $calendar.= '<td class="calendar-day">';
-      /* add in the day number */
-      $calendar.= '<div class="day-number">'.$list_day.'</div>';
-
-      /** QUERY THE DATABASE FOR AN ENTRY FOR THIS DAY !!  IF MATCHES FOUND, PRINT THEM !! **/
-      $calendar.= str_repeat('<p> </p>',2);
-      
-    $calendar.= '</td>';
-    if($running_day == 6):
-      $calendar.= '</tr>';
-      if(($day_counter+1) != $days_in_month):
-        $calendar.= '<tr class="calendar-row">';
-      endif;
-      $running_day = -1;
-      $days_in_this_week = 0;
-    endif;
-    $days_in_this_week++; $running_day++; $day_counter++;
-  endfor;
-
-  /* finish the rest of the days in the week */
-  if($days_in_this_week < 8):
-    for($x = 1; $x <= (8 - $days_in_this_week); $x++):
-      $calendar.= '<td class="calendar-day-np"> </td>';
-    endfor;
-  endif;
-
-  /* final row */
-  $calendar.= '</tr>';
-
-  /* end the table */
-  $calendar.= '</table>';
-  
-  /* all done, return result */
-  return $calendar;
-}
-
-if ($month == 1){                       //Zet maandnummers om naar maandnamen
-  $monthNaam = "<h1>Januari</h1>";
-  echo $monthNaam;
-}
-if ($month == 2){
-  echo "<h1>Februari</h1>";
-}
-if ($month == 3){
-  echo "<h1>Maart</h1>";
-}
-if ($month == 4){
-  echo "<h1>April</h1>";
-}
-if ($month == 5){
-  echo "<h1>Mei</h1>";
-}
-if ($month == 6){
-  echo "<h1>Juni</h1>";
-}
-if ($month == 7){
-  echo "<h1>Juli</h1>";
-}
-if ($month == 8){
-  echo "<h1>Augustus</h1>";
-}
-if ($month == 9){
-  echo "<h1>September</h1>";
-}
-if ($month == 10){
-  echo "<h1>Oktober</h1>";
-}
-if ($month == 11){
-  echo "<h1>November</h1>";
-}
-if ($month == 12){
-  echo "<h1>December</h1>";
-}
-/* sample usages */
-echo $monthNaam + $year;
-echo draw_calendar($month,$year);
-
-
-
-     ?>
-    </center>
-
-  </body>
 </html>

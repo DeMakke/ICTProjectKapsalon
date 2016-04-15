@@ -1,230 +1,131 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta content="text/html; charset=utf-8" />
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
     <title>Welkom <?= $this->session->userdata('username') ?></title>
-    <link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-    <style>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="<?php echo base_url(); ?>/assets/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="<?php echo base_url(); ?>/assets/css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="<?php echo base_url(); ?>/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Admin Pagina</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?= $this->session->userdata('username') ?> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profiel</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="<?= site_url('home/logout') ?>"><i class="fa fa-fw fa-power-off"></i> Uitloggen</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="home"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="Kalender"><i class="fa fa-fw fa-bar-chart-o"></i> Kalender</a>
+                    </li>
+                    <li>
+                        <a href="Klanten"><i class="fa fa-fw fa-table"></i> Klanten</a>
+                    </li>
         
-/* CSS Document */
+                    <li>
+                        <a href="afspraak"><i class="fa fa-fw fa-edit"></i> Afspraak</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
 
-*
-{
-	margin:0;
-	padding:0;
-}
-#login-form
-{
-	margin-top:70px;
-}
-table
-{
-	border:solid #dcdcdc 1px;
-	padding:25px;
-	box-shadow: 0px 0px 1px rgba(0,0,0,0.2);
-}
-table tr,td
-{
-	padding:15px;
-	//border:solid #e1e1e1 1px;
-}
-table tr td input
-{
-	width:97%;
-	height:45px;
-	border:solid #e1e1e1 1px;
-	border-radius:3px;
-	padding-left:10px;
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:16px;
-	background:#f9f9f9;
-	transition-duration:0.5s;
-	box-shadow: inset 0px 0px 1px rgba(0,0,0,0.4);
-}
+        <div id="page-wrapper">
 
-table tr td button
-{
-	width:100%;
-	height:45px;
-	border:0px;
-	background:rgba(12,45,78,11);
-	background:-moz-linear-gradient(top, #595959 , #515151);
-	border-radius:3px;
-	box-shadow: 1px 1px 1px rgba(1,0,0,0.2);
-	color:#f9f9f9;
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:18px;
-	font-weight:bolder;
-	text-transform:uppercase;
-}
-table tr td button:active
-{
-	position:relative;
-	top:1px;
-}
-table tr td a
-{
-	text-decoration:none;
-	color:#00a2d1;
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:18px;
-}
+            <div class="container-fluid">
 
-/* css voor home pagina, na het inloggen  */
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            <h3><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Light_green_check.svg" width="30" height="30"/> Proficiat! U bent succesvol aangemeld</h3>
+                        </h1>
+                        <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-dashboard"></i> Dashboard
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
 
-*
-{
-	margin:0;
-	padding:0;
-}
-#header
-{
-	width:100%;
-	height:60px;
-	background:rgba(00,11,22,33);
-	color:#9fa8b0;
-	font-family:Verdana, Geneva, sans-serif;
-}
-#header #left
-{
-	float:left;
-	position:relative;
-}
-#header #left label
-{
-	position:relative;
-	top:5px;
-	left:100px;
-	font-size:35px;
-}
-#header #right
-{
-	float:right;
-	position:relative;
-}
-#header #right #content
-{
-	position:relative;
-	top:20px;
-	right:100px;
-	color:#fff;
-}
-#header #right #content a
-{
-	color:#00a2d1;
-}
+               
 
+            </div>
+            <!-- /.container-fluid -->
+            
 
-#body
-{
-	text-align:center;
-	margin-top:150px;
-	font-family:Verdana, Geneva, sans-serif;
-	font-size:36px;
-}
+        </div>
+        <!-- /#page-wrapper -->
 
-/* css voor navigatiebalk */
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
-}
-
-/* Kalender CSS */
-table.calendar{ 
-	border-left:1px solid #999;
-}
-tr.calendar-row	{ 
-
-}
-td.calendar-day	{
- 	min-height:80px;
- 	font-size:11px; 
- 	position:relative; 
-}
-* html div.calendar-day { 
-	height:80px; 
-}
-td.calendar-day:hover	{ 
-	background:#eceff5; 
-}
-td.calendar-day-np	{ 
-	background:#eee; 
-	min-height:80px; 
-}
-* html div.calendar-day-np { 
-	height:80px; 
-}
-td.calendar-day-head { 
-	background:#ccc; 
-	font-weight:bold; 
-	text-align:center; 
-	width:120px; 
-	padding:5px; 
-	border-bottom:1px solid #999; 
-	border-top:1px solid #999; 
-	border-right:1px solid #999; 
-}
-div.day-number		{ 
-	background:#999; 
-	padding:5px; 
-	color:#fff; 
-	font-weight:bold; 
-	float:right; 
-	margin:-5px -5px 0 0; 
-	width:20px; 
-	text-align:center; 
-}
-/* shared */
-td.calendar-day, td.calendar-day-np { 
-	width:120px; 
-	padding:5px; 
-	border-bottom:1px solid #999; 
-	border-right:1px solid #999; 
-}
-
-    </style>
-  </head>
-  <body>
-    <div id="header">
-	     <div id="left">
-          <label>Admin Pagina</label>
-       </div>
-       <div id="right">
-    	    <div id="content">
-        	   Welkom <?= $this->session->userdata('username') ?>&nbsp;, <a href="<?= site_url('home/logout') ?>">Logout</a>
-          </div>
-       </div>
     </div>
-  <ul>
-    <li><a href="home">Home</a></li>
-    <li><a href="kalender">Kalender</a></li>
-    <li><a href="klanten">Klanten</a></li>
-    <li><a href="afspraak">Afspraak maken</a></li>
-  </ul>
-  <br/>
-  <center>
-    <h1><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Light_green_check.svg" width="30" height="30"/> Proficiat! U bent succesvol aangemeld</h1>
-    </center>
+    <!-- /#wrapper -->
 
-  </body>
+    <!-- jQuery -->
+    <script src="<?php echo base_url(); ?>/assets/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo base_url(); ?>/assets/js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="<?php echo base_url(); ?>/assets/js/plugins/morris/raphael.min.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/js/plugins/morris/morris.min.js"></script>
+    <script src="<?php echo base_url(); ?>/assets/js/plugins/morris/morris-data.js"></script>
+
+</body>
+
 </html>

@@ -1,4 +1,3 @@
-<!--************************** AFSPRAAKPAGINA na inloggen *****************************-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +54,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?= $this->session->userdata('username') ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="profiel"><i class="fa fa-fw fa-user"></i> Profiel</a>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profiel</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -77,7 +76,7 @@
                         <a href="Klanten"><i class="fa fa-fw fa-table"></i> Klanten</a>
                     </li>
         
-                    <li class="active">
+                    <li>
                         <a href="afspraak"><i class="fa fa-fw fa-edit"></i> Afspraak</a>
                     </li>
                 </ul>
@@ -93,11 +92,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Afspraak
+                            Profiel
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-dashboard"></i> Afspraak
+                                <i class="fa fa-dashboard"></i> Uw Profiel
                             </li>
                         </ol>
                     </div>
@@ -108,8 +107,9 @@
 
             </div>
             <!-- /.container-fluid -->
-            
-
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.kanakkan.com/images/14588894232049024503dummy_profpic.jpg" width="150"height="150" alt="Dummy"/></p>
+            <br/>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Naam</p>
         </div>
         <!-- /#page-wrapper -->
 
@@ -130,3 +130,4 @@
 </body>
 
 </html>
+

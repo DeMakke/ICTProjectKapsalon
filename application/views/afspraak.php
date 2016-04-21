@@ -1,4 +1,4 @@
-<!--************************** AFSPRAAKPAGINA na inloggen *****************************-->
+<!--************************** AFSPRAAKPAGINA in Admingedeelte *****************************-->
 <!DOCTYPE html>
 <html lang="en">
 

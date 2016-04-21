@@ -19,6 +19,6 @@ CREATE TABLE `users` (
 
 TRUNCATE `users`;
 INSERT INTO `users` (`id_user`, `username`, `password`) VALUES
-(1,	'Imron',	'5f4dcc3b5aa765d61d8327deb882cf99');
+(1,	'Niels',	'5f4dcc3b5aa765d61d8327deb882cf99');
 
 -- 2016-03-01 17:17:01

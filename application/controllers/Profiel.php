@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * @name Home.php
+ * @name Profiel.php
  * @author Niels Bekkers
  */
 class Profiel extends CI_Controller{

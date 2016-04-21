@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @name: user_model.php
+ * @author: Niels Bekkers
+ */
+
 class user_model extends CI_Model
 {
     function __construct()

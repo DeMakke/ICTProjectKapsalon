@@ -1,4 +1,4 @@
-<!--************************** KLANTENPAGINA na inloggen *****************************-->
+<!--************************** KLANTENPAGINA in admingedeelte *****************************-->
 <!DOCTYPE html>
 <html lang="en">
 

@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * @name Home.php
+ * @name Kalender.php
  * @author Niels Bekkers
  */
 class Kalender extends CI_Controller{

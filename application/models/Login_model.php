@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * @name: Login model
+ * @name: Login_model.php
  * @author: Niels Bekkers
  */
 class Login_model extends CI_Model

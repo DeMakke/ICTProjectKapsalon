@@ -1,6 +1,10 @@
 <?php
 class Registreer extends CI_Controller
 {
+    /**
+      * @name Registreer.php
+      * @author Niels Bekkers
+    */
     public function __construct()
     {
         parent::__construct();

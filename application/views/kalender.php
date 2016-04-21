@@ -1,4 +1,4 @@
-<!--*********************** KALENDER pagina na inloggen ***************************-->
+<!--*********************** KALENDER pagina in admingedeelte ***************************-->
 <!DOCTYPE html>
 <html lang="en">
 

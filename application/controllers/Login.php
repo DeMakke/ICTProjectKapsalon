@@ -23,9 +23,16 @@ class Login extends CI_Controller
                     'id_user' => $result->id_user,
                     'username' => $result->username
                 ];
+                //Controleer wie toegang heeft tot het admingedeelte
+                $user = $result->username;
+                if($user == 'admin'){
+                   $this->session->set_userdata($data);
+                   redirect('home');        //adminpagina
+                }
+                else{
+                   redirect('test');        //userpagina
+                }
 
-                $this->session->set_userdata($data);
-                redirect('home');
             } else {
                 $this->session->set_flashdata('flash_data', 'Username or password is wrong!');
                 redirect('login');

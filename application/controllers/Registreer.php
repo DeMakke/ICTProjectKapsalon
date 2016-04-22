@@ -23,63 +23,44 @@ class Registreer extends CI_Controller
     {
         //set validation rules
         
-        $this->form_validation->set_rules('username', 'Last Name', 'trim|required|alpha|min_length[3]|max_length[30]|xss_clean');
-        //$this->form_validation->set_rules('email', 'Email ID', 'trim|required|valid_email|is_unique[user.email]');
-        $this->form_validation->set_rules('password', 'Password', 'trim|required|matches[cpassword]|md5');
+        $this->form_validation->set_rules('username', 'username');
+        $this->form_validation->set_rules('email', 'user_email');
+        $this->form_validation->set_rules('password', 'password');
         
         //validate form input
         if ($this->form_validation->run() == FALSE)
         {
             // fails
-            $this->load->view('registreer');
+            $this->load->view('Registreer');
         }
         else
         {
             //insert the user registration details into database
             $data = array(
                 'username' => $this->input->post('username'),
-                //'email' => $this->input->post('email'),
-                'password' => $this->input->post('password')
+                'user_email' => $this->input->post('email'),
+                'password' => md5($this->input->post('password'))
             );
             
             // insert form data into database
-            //if ($this->user_model->insertUser($data))
-            //{
-                // send email
-                //if ($this->user_model->sendEmail($this->input->post('email')))
-                //{
-                    // successfully sent mail
-                   // $this->session->set_flashdata('msg','<div class="alert alert-success text-center">You are Successfully Registered! Please confirm the mail sent to your Email-ID!!!</div>');
-                    //redirect('user/register');
-                //}
-                //else
-                //{
-                    // error
-                    //$this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Oops! Error.  Please try again later!!!</div>');
-                    //redirect('user/register');
-                //}
-            //}
-            //else
-            //{
-                // error
-               //$this->session->set_flashdata('msg','<div class="alert alert-danger text-center">Oops! Error.  Please try again later!!!</div>');
-                //redirect('user/register');
-            //}
+            if ($this->user_model->insertUser($data))
+            {
+////                     successfully Registered
+                    $this->session->set_flashdata('flashSuccess','<center><br/><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Light_green_check.svg" width="30" height="30"/><h1>Proficiat! U bent succesvol geregistreerd</h1><center>');
+                    header('Refresh: 5; URL=');
+                    redirect('Registreer');
+                    
+
+            }
+            else
+            {
+//                 error
+               $this->session->set_flashdata('Oops! Error.  Please try again later!!!');
+                redirect('');
+            }
         }
+
     }
     
-//    function verify($hash=NULL)
-//    {
-//        if ($this->user_model->verifyEmailID($hash))
-//        {
-//            $this->session->set_flashdata('verify_msg','<div class="alert alert-success text-center">Your Email Address is successfully verified! Please login to access your account!</div>');
-//            redirect('user/register');
-//        }
-//        else
-//        {
-//            $this->session->set_flashdata('verify_msg','<div class="alert alert-danger text-center">Sorry! There is error verifying your Email Address!</div>');
-//            redirect('user/register');
-//        }
-//    }
 }
 ?>

@@ -116,7 +116,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Diensten</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted"></h3>
                 </div>
             </div>
             <div class="row text-center">
@@ -126,15 +126,15 @@
                         <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Knippen</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted">Door gebruikmaking van onze eigen kniptechniek zorgen wij ervoor, dat jouw haar ook nadat het gewassen is, zijn natuurlijke valling en model behoud. Dit vereist heel veel creativiteit en ervaring.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
-                    <h4 class="service-heading">Blazen</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <h4 class="service-heading">Drogen</h4>
+                    <p class="text-muted">Onze uitgebreide manier van haren drogen geeft je het mooiste resultaat. We kunnen bijvoorbeeld gekruld haar stijl fohnen of de prachtige ‘Victoria Secret slag’ creëren.</p>
                 </div>
                 <div class="col-md-4">
                     <span class="fa-stack fa-4x">
@@ -142,7 +142,7 @@
                         <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
                     </span>
                     <h4 class="service-heading">Kleuren</h4>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                    <p class="text-muted"> Een persoonlijke haar analyse en een professionele kleuradvies behoort standaard in ons servicepakket. Wij zoeken jouw kleur in ons gevarieerd kleurenpallet.</p>
                 </div>
             </div>
         </div>
@@ -252,75 +252,41 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Over</h2>
+                    <h3 class="section-subheading text-muted">Samen met een gedreven team haarstylisten staan we in voor dit toonaangevend en vooruitstrevend salon, waarbij creativiteit, ontwikkeling en vakkennis een belangrijke basis vormen. Service & kwaliteit, daar staan wij voor.</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="<?php echo base_url(); ?>/assets/img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Datum</h4>
-                                    <h4 class="subheading">Gebeurtenis</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="<?php echo base_url(); ?>/assets/img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Datum</h4>
-                                    <h4 class="subheading">Gebeurtenis</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="<?php echo base_url(); ?>/assets/img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Datum</h4>
-                                    <h4 class="subheading">Gebeurtenis</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="<?php echo base_url(); ?>/assets/img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Datum</h4>
-                                    <h4 class="subheading">Gebeurtenis</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Gebeurtenis</h4>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="col-sm-5">
+                    <div>
+                        <div>
+                            <h4>Openingsuren</h4>
+                            <h4 class="subheading"></h4>
+                        </div>
+                        <div>
+                            <p class="text-muted">
+                                Maandag: gesloten </br>
+                                Dinsdag: Gesloten </br>
+                                Woensdag: 09:00 - 19:00 </br>
+                                Donderdag: 09:00 - 19:00 </br>
+                                Vrijdag: 09:00 - 19:00 </br>
+                                Zaterdag: 09:00 - 19:00 </br>
+                                Zondag: 09:00 - 12:00 </br>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <img class="img-circle img-responsive" src="<?php echo base_url(); ?>/assets/img/about/1.jpg" width="200" height="200">
+                </div>
+            </div>
+            <div class="row">
+                <div class="timeline-heading">
+                    <h4 class="subheading">Locatie</h4>
+                </div>
+                <iframe class="col-sm-5" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4210.409207094644!2d5.5247131139754835!3d51.13568212715043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1snl!2sbe!4v1461313119475" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <div>
+                    <img class="col-sm-5" src="<?php echo base_url(); ?>/assets/img/about/2.jpg" alt="" height="450" width="600">
                 </div>
             </div>
         </div>
@@ -331,7 +297,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Our Amazing Team</h2>
+                    <h2 class="section-heading">Kapsters</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>
@@ -339,8 +305,8 @@
                 <div class="col-sm-4">
                     <div class="team-member">
                         <!--<img src="img/team/1.jpg" class="img-responsive img-circle" alt="">-->
-                        <h4>persoon 1</h4>
-                        <p class="text-muted">functie</p>
+                        <h4>Persoon 1</h4>
+                        <p class="text-muted">Functie</p>
                         <ul class="list-inline social-buttons">
                             <li><a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
@@ -354,8 +320,8 @@
                 <div class="col-sm-4">
                     <div class="team-member">
                         <!--<img src="img/team/2.jpg" class="img-responsive img-circle" alt="">-->
-                        <h4>persoon 2</h4>
-                        <p class="text-muted">functie</p>
+                        <h4>Persoon 2</h4>
+                        <p class="text-muted">Functie</p>
                         <ul class="list-inline social-buttons">
                             <li><a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
@@ -369,8 +335,23 @@
                 <div class="col-sm-4">
                     <div class="team-member">
                         <!--<img src="img/team/3.jpg" class="img-responsive img-circle" alt="">-->
-                        <h4>persoon 3</h4>
-                        <p class="text-muted">functie</p>
+                        <h4>Persoon 3</h4>
+                        <p class="text-muted">Functie</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <!--<img src="img/team/3.jpg" class="img-responsive img-circle" alt="">-->
+                        <h4>Persoon 4</h4>
+                        <p class="text-muted">Functie</p>
                         <ul class="list-inline social-buttons">
                             <li><a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
@@ -423,7 +404,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contact Us</h2>
+                    <h2 class="section-heading">Contacteer ons</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>

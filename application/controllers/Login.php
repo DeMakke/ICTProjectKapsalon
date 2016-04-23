@@ -26,11 +26,12 @@ class Login extends CI_Controller
                 //Controleer wie toegang heeft tot het admingedeelte
                 $user = $result->username;
                 if($user == 'admin'){
-                   $this->session->set_userdata($data);
+                   $this->session->set_userdata($data);         //Sessie gebruikt in controller Home.php
                    redirect('home');        //adminpagina
                 }
                 else{
-                   redirect('test');        //userpagina
+                   $this->session->set_userdata($data);         //Sessie gebruikt in controller HomeUser.php
+                   redirect('homeUser');        //userpagina
                 }
 
             } else {

@@ -16,36 +16,36 @@ class Registreer extends CI_Controller
     
     function index()
     {
-        $this->register();
+        $this->register();      //Voer functie register() uit
     }
 
     function register()
     {
-        //set validation rules
+        //validatie regels
         
         $this->form_validation->set_rules('username', 'username');
         $this->form_validation->set_rules('email', 'user_email');
         $this->form_validation->set_rules('password', 'password');
         
-        //validate form input
+        //valideer forumier input
         if ($this->form_validation->run() == FALSE)
         {
-            // fails
+            // error
             $this->load->view('Registreer');
         }
         else
         {
-            //insert the user registration details into database
+            //insert de gebruikersgegevens in de database
             $data = array(
                 'username' => $this->input->post('username'),
                 'user_email' => $this->input->post('email'),
                 'password' => md5($this->input->post('password'))
             );
             
-            // insert form data into database
+            // insert formulierdata in database
             if ($this->user_model->insertUser($data))
             {
-////                     successfully Registered
+                    //succesvol geregistreerd
                     $this->session->set_flashdata('flashSuccess','<center><br/><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Light_green_check.svg" width="30" height="30"/><h1>Proficiat! U bent succesvol geregistreerd</h1><center>');
                     header('Refresh: 5; URL=');
                     redirect('Registreer');
@@ -54,8 +54,8 @@ class Registreer extends CI_Controller
             }
             else
             {
-//                 error
-               $this->session->set_flashdata('Oops! Error.  Please try again later!!!');
+                //error
+               $this->session->set_flashdata('Oops! er is iets misgegaan, probeer nogmaals!');
                 redirect('');
             }
         }

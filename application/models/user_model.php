@@ -9,11 +9,11 @@ class user_model extends CI_Model
 {
     function __construct()
     {
-        // Call the Model constructor
+        // Roep de constructor op
         parent::__construct();
     }
     
-    //insert into user table
+    //insert in login tabel
     function insertUser($data)
     {
         return $this->db->insert('login', $data);

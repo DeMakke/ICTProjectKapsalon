@@ -1,4 +1,4 @@
-<!--************************** HOMEPAGINA in Usergedeelte *****************************-->
+<!--************************** PROFIELPAGINA in Usergedeelte *****************************-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +55,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?= $this->session->userdata('username') ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="profielUser"><i class="fa fa-fw fa-user"></i> Profiel</a>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profiel</a>
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -67,10 +67,9 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li class="active">
-                        <a href="home"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    <li>
+                        <a href="homeUser"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
-        
                     <li>
                         <a href="afspraakUser"><i class="fa fa-fw fa-edit"></i> Afspraak</a>
                     </li>
@@ -87,11 +86,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            <h3><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Light_green_check.svg" width="30" height="30"/> Proficiat! U bent succesvol aangemeld</h3>
+                            Profiel
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-dashboard"></i> Dashboard
+                                <i class="fa fa-dashboard"></i> Uw Profiel
                             </li>
                         </ol>
                     </div>
@@ -102,8 +101,9 @@
 
             </div>
             <!-- /.container-fluid -->
-            
-
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.kanakkan.com/images/14588894232049024503dummy_profpic.jpg" width="150"height="150" alt="Dummy"/></p>
+            <br/>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Naam</p>
         </div>
         <!-- /#page-wrapper -->
 
@@ -124,4 +124,3 @@
 </body>
 
 </html>
-

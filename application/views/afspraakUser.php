@@ -1,4 +1,4 @@
-<!--************************** AFSPRAAKPAGINA in Admingedeelte *****************************-->
+<!--************************** AFSPRAAKPAGINA in Usergedeelte *****************************-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="homeUser">Admin Pagina</a>
+                <a class="navbar-brand" href="homeUser">User Pagina</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">

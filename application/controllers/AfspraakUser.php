@@ -9,7 +9,7 @@ class AfspraakUser extends CI_Controller{
     function __construct() {
         parent::__construct();
         
-        if(empty($this->session->userdata('id_user'))) {
+        if(empty($this->session->userdata('usersessie','id_user'))) {
             $this->session->set_flashdata('flash_data', 'You don\'t have access!');
             redirect('login');
         }

@@ -27,10 +27,10 @@ class Login extends CI_Controller
                 $user = $result->username;
                 if($user == 'admin'){
                    $this->session->set_userdata($data);         //Sessie gebruikt in controller Home.php
-                   redirect('home');        //adminpagina
+                   redirect('home');            //adminpagina
                 }
                 else{
-                   $this->session->set_userdata($data);         //Sessie gebruikt in controller HomeUser.php
+                   $this->session->set_userdata('usersessie',$data);         //Sessie gebruikt in controller HomeUser.php
                    redirect('homeUser');        //userpagina
                 }
 

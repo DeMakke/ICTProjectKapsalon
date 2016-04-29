@@ -52,7 +52,7 @@
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?= $this->session->userdata('username') ?> <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <?php $data = $this->session->userdata('usersessie'); echo $data['username'] ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profiel</a>
@@ -103,7 +103,8 @@
             <!-- /.container-fluid -->
             <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.kanakkan.com/images/14588894232049024503dummy_profpic.jpg" width="150"height="150" alt="Dummy"/></p>
             <br/>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Naam</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Naam : <?php $data = $this->session->userdata('usersessie'); echo $data['username'] ?></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;id: <?php $data = $this->session->userdata('usersessie'); echo $data['user_email'] ?></p>
         </div>
         <!-- /#page-wrapper -->
 

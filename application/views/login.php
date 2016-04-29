@@ -68,6 +68,9 @@
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
+                    <li>
+                        <a class="page-scroll" href="#login">Inloggen</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -81,7 +84,7 @@
             <div class="intro-text">
                 <div class="intro-lead-in">Welkom bij ons kapsalon!</div>
                 <div class="intro-heading">Leuk je te zien!</div>
-                <a href="#services" class="page-scroll btn btn-xl">Ontdek meer</a>
+                <a href="#login" class="page-scroll btn btn-xl" id="login">Ontdek meer</a>
             </div>
         </div>
     </header>
@@ -89,19 +92,24 @@
 
     <!--Login container-->
     
-    <div class="container">
+    <div class="container" >
             <div class="row">
                 <div class="col-lg-12 text-center">
+                    <h2 class="section-heading" >Inloggen</h2><br/>
                     <div id="login-form">
 				<form method="post">
 					<table align="center" width="30%" border="0">
 						<tr>
-							<td><input type="text" name="username" placeholder="Gebruikersnaam" required /></td>
-							<td><input type="password" name="password" placeholder="Wachtwoord" required /></td>
-							<td><button type="submit" name="btn-login">Inloggen</button></td>
-							</tr>
-							<tr>
-							<td><a href="<?php echo site_url('Registreer'); ?>">Registreren</a></td>
+                                                    <td><input type="text" name="username" placeholder="Gebruikersnaam" required /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="password" name="password" placeholder="Wachtwoord" required /><hr/></td>
+                                                </tr>
+						<tr>
+                                                    <td><button type="submit" name="btn-login">Inloggen</button></td>
+						</tr>
+						<tr>
+                                                    <td><a href="<?php echo site_url('Registreer'); ?>">Registreren</a></td>
 						</tr>
 					</table>
 				</form>

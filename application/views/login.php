@@ -68,6 +68,9 @@
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
+                    <li>
+                        <a class="page-scroll" href="#login">Inloggen</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -75,13 +78,12 @@
         <!-- /.container-fluid -->
     </nav>
 
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in">Welkom bij ons kapsalon!</div>
                 <div class="intro-heading">Leuk je te zien!</div>
-                <a href="#services" class="page-scroll btn btn-xl">Ontdek meer</a>
+                <a href="#login" class="page-scroll btn btn-xl" id="login">Ontdek meer</a>
             </div>
         </div>
     </header>
@@ -89,19 +91,24 @@
 
     <!--Login container-->
     
-    <div class="container">
+    <div class="container" >
             <div class="row">
                 <div class="col-lg-12 text-center">
+                    <h2 class="section-heading" >Inloggen</h2><br/>
                     <div id="login-form">
 				<form method="post">
 					<table align="center" width="30%" border="0">
 						<tr>
-							<td><input type="text" name="username" placeholder="Gebruikersnaam" required /></td>
-							<td><input type="password" name="password" placeholder="Wachtwoord" required /></td>
-							<td><button type="submit" name="btn-login">Inloggen</button></td>
-							</tr>
-							<tr>
-							<td><a href="<?php echo site_url('Registreer'); ?>">Registreren</a></td>
+                                                    <td><input type="text" name="username" placeholder="Gebruikersnaam" required /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="password" name="password" placeholder="Wachtwoord" required /><hr/></td>
+                                                </tr>
+						<tr>
+                                                    <td><button type="submit" name="btn-login">Inloggen</button></td>
+						</tr>
+						<tr>
+                                                    <td><a href="<?php echo site_url('Registreer'); ?>">Registreren</a></td>
 						</tr>
 					</table>
 				</form>
@@ -109,7 +116,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    
     <!-- Services Section -->
     <section id="services">
         <div class="container">
@@ -257,13 +264,13 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-5">
+                <div class="col-md-6">
                     <div>
-                        <div>
+                        <div class="col-lg-12 text-right">
                             <h4>Openingsuren</h4>
                             <h4 class="subheading"></h4>
                         </div>
-                        <div>
+                        <div class="col-lg-12 text-right">
                             <p class="text-muted">
                                 Maandag: gesloten </br>
                                 Dinsdag: Gesloten </br>
@@ -276,17 +283,33 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-5">
+                <div class="col-md-6">
                     <img class="img-circle img-responsive" src="<?php echo base_url(); ?>/assets/img/about/1.jpg" width="200" height="200">
                 </div>
             </div>
             <div class="row">
-                <div class="timeline-heading">
-                    <h4 class="subheading">Locatie</h4>
+                <div class="col-md-6">
+                    <div>
+                        <div class="col-lg-12 text-center">
+                            <h4 class="subheading">Locatie</h4>
+                        </div>
+                        <div class="col-lg-12">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4210.409207094644!2d5.5247131139754835!3d51.13568212715043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1snl!2sbe!4v1461313119475" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
-                <iframe class="col-sm-5" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4210.409207094644!2d5.5247131139754835!3d51.13568212715043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1snl!2sbe!4v1461313119475" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                <div>
-                    <img class="col-sm-5" src="<?php echo base_url(); ?>/assets/img/about/2.jpg" alt="" height="450" width="600">
+                <div class="col-md-6">
+                                        
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <div class="col-lg-12 text-center">
+                                <h4 class="subheading">Voorgevel</h4>
+                        </div>
+                        <div class="col-lg-12">
+                            <img src="<?php echo base_url(); ?>/assets/img/about/KapsalonFront.jpg" alt="" height="450" width="600">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -297,16 +320,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Kapsters</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Ons team</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <!--<img src="img/team/1.jpg" class="img-responsive img-circle" alt="">-->
-                        <h4>Persoon 1</h4>
-                        <p class="text-muted">Functie</p>
+                        <img src="<?php echo base_url(); ?>/assets/img/team/1.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Evelien</h4>
+                        <!--<p class="text-muted">Functie</p>-->
                         <ul class="list-inline social-buttons">
                             <li><a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
@@ -319,9 +341,9 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <!--<img src="img/team/2.jpg" class="img-responsive img-circle" alt="">-->
-                        <h4>Persoon 2</h4>
-                        <p class="text-muted">Functie</p>
+                        <img src="<?php echo base_url(); ?>/assets/img/team/2.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Jan</h4>
+                        
                         <ul class="list-inline social-buttons">
                             <li><a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
@@ -334,9 +356,9 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <!--<img src="img/team/3.jpg" class="img-responsive img-circle" alt="">-->
-                        <h4>Persoon 3</h4>
-                        <p class="text-muted">Functie</p>
+                        <img src="<?php echo base_url(); ?>/assets/img/team/3.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Leen</h4>
+                        
                         <ul class="list-inline social-buttons">
                             <li><a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
@@ -349,9 +371,39 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
-                        <!--<img src="img/team/3.jpg" class="img-responsive img-circle" alt="">-->
-                        <h4>Persoon 4</h4>
-                        <p class="text-muted">Functie</p>
+                        <img src="<?php echo base_url(); ?>/assets/img/team/4.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Marcella</h4>
+                        
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="<?php echo base_url(); ?>/assets/img/team/5.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Lien</h4>
+                        
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="<?php echo base_url(); ?>/assets/img/team/6.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Kerima</h4>
+                        
                         <ul class="list-inline social-buttons">
                             <li><a href="#"><i class="fa fa-twitter"></i></a>
                             </li>
@@ -365,7 +417,10 @@
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                    <p class="large text-muted">
+                        Kreatief kiest ervoor om met een evenwichtig team te werken, waarin elk lid zijn sterktes en specialisaties heeft.<br />
+                        Zo proberen we te zoeken naar de ideale match tussen ons en jou als klant.
+                    </p>
                 </div>
             </div>
         </div>
@@ -404,8 +459,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contacteer ons</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">Contact</h2>
+                    <p class="text-primary">Contacteer ons op onderstaande gegevens of stuur ons een bericht via onderstaan formulier.
+                    </p>
                 </div>
             </div>
             <div class="row">

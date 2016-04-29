@@ -13,6 +13,7 @@ class Login extends CI_Controller
         $this->load->model("login_model", "login");
         if(!empty($_SESSION['id_user']))
             redirect('home');
+        
     }
 
     public function index() {
@@ -21,11 +22,15 @@ class Login extends CI_Controller
             if(!empty($result)) {
                 $data = [
                     'id_user' => $result->id_user,
-                    'username' => $result->username
+                    'username' => $result->username,
+                    'user_email' => $result->email
                 ];
-                //Controleer wie toegang heeft tot het admingedeelte
+       
+                //Controleer wie toegang heeft tot het admingedeelte/usergedeelte
                 $user = $result->username;
-                if($user == 'admin'){
+                $idUser = $result->id_user;
+                
+                if($user == 'admin'&&$idUser == '1'){
                    $this->session->set_userdata($data);         //Sessie gebruikt in controller Home.php
                    redirect('home');            //adminpagina
                 }

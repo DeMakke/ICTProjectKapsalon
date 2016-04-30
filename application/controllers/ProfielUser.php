@@ -13,8 +13,13 @@ class ProfielUser extends CI_Controller{
             $this->session->set_flashdata('flash_data', 'You don\'t have access!');
             redirect('login');
         }
+        
+        $this->load->database();
+        $this->load->model('profieluser_model');
     }
     public function index(){
-        $this->load->view("profielUser");
+        //stopt alle gegevens in dataUser['users']
+        $this->dataUser['users'] = $this->profieluser_model->get_all();
+        $this->load->view("profielUser",$this->dataUser);
     }
 }

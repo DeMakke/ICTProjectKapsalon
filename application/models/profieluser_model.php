@@ -6,23 +6,23 @@
  * and open the template in the editor.
  */
 
-class profieluser_model extends CI_Model{
-    function toonKlant(){
+class profieluser_model extends CI_Model
+{
+    function __construct() {
+        parent::__construct();
+        $this->load->database();
+    }
+    
+    public function get_all(){
+        //haalt huidige userdata op van loginsessiee
         $data = $this->session->userdata('usersessie');
-        
-        $this->database->query('SELECT * FROM tblklant WHERE (id_user =='.$data['id_user'].'');
-        $query = $this->database->get('tblklant');
-        
-        if($query->num_rows() > 0){
-            foreach ($query->result() as $row){
-                $data2[]=$row;
-            }
-        }
-        
-        return $data2;
-        
-        
-
-
+        $this->db->select('*');
+        $this->db->from('tblklant');
+        //vergelijkt de id van de ingelogde gebruiker met deze van de database
+        $this->db->where('id_user ='.$data['id_user']);
+        //haalt gegevens op
+        $query = $this->db->get();
+        //stuurt query uit als array
+        return $query->result_array();
     }
 }

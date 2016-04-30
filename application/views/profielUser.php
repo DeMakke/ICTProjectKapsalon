@@ -103,21 +103,40 @@
             <!-- /.container-fluid -->
             <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.kanakkan.com/images/14588894232049024503dummy_profpic.jpg" width="150"height="150" alt="Dummy"/></p>
             <br/>
-            <?php 
-            $data = $this->session->userdata('usersessie');
-            
-            $query = $this->db->query('SELECT * FROM tblklant WHERE id_user ='.$data['id_user']);
-
-            $row = $query->row();
-
-            if (isset($row))
-            {
-                echo $row->id_user;
-                echo $row->Voornaam;
-                echo $row->Achternaam;
-            }
-            ?>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;Gegevens: <?php $data = $this->session->userdata('usersessie'); echo $data['username']; ?></p>
+            <fieldset> 
+                <table>
+                    <tr>
+                        <th>Id</th>
+                        <th>Voornaam</th>
+                        <th>Achternaam</th>
+                        <th>Gsm</th>
+                        <th>Email</th>
+                        <th>Geslacht</th>
+                    </tr>
+                    <?php 
+                     foreach ($users as $user) {
+                         $sUserId = $user['id_user'];
+                         $sVoornaam = $user['Voornaam'];
+                         $sAchternaam = $user['Achternaam'];
+                         $iTelefoon = $user['Telefoonnr'];
+                         $sEmail = $user['Email'];
+                         $sGeslacht = $user['Geslacht'];
+                     }
+                    ?>
+                    <tr>
+                        <td><?php echo $sUserId ?></td>
+                        <td><?php echo $sVoornaam?></td>
+                        <td><?php echo $sAchternaam?></td>
+                        <td><?php echo $iTelefoon?></td>
+                        <td><?php echo $sEmail?></td>
+                        <td><?php echo $sGeslacht?></td>
+                    </tr>
+                   
+
+                </table>
+            </fieldset>
+            
             
         </div>
         <!-- /#page-wrapper -->

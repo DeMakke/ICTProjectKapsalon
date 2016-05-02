@@ -101,18 +101,14 @@
 
             </div>
             <!-- /.container-fluid -->
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.kanakkan.com/images/14588894232049024503dummy_profpic.jpg" width="150"height="150" alt="Dummy"/></p>
-            <br/>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Gegevens: <?php $data = $this->session->userdata('usersessie'); echo $data['username']; ?></p>
-            <fieldset> 
-                <table>
+            
+            <table class="table-fill">
+                <thead>
+                </thead>
+                <tbody class="table-hover">
                     <tr>
-                        <th>Id</th>
-                        <th>Voornaam</th>
-                        <th>Achternaam</th>
-                        <th>Gsm</th>
-                        <th>Email</th>
-                        <th>Geslacht</th>
+                        <td><p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.kanakkan.com/images/14588894232049024503dummy_profpic.jpg" width="150"height="150" alt="Dummy"/></p></td>
+                        <td><br/><p>&nbsp;&nbsp;&nbsp;&nbsp;Gegevens: <?php $data = $this->session->userdata('usersessie'); echo $data['username']; ?></p></td>
                     </tr>
                     <?php 
                      foreach ($users as $user) {
@@ -120,24 +116,33 @@
                          $sVoornaam = $user['Voornaam'];
                          $sAchternaam = $user['Achternaam'];
                          $iTelefoon = $user['Telefoonnr'];
-                         $sEmail = $user['Email'];
+                         //$sEmail = $user['Email'];
                          $sGeslacht = $user['Geslacht'];
                      }
                     ?>
                     <tr>
-                        <td><?php echo $sUserId ?></td>
-                        <td><?php echo $sVoornaam?></td>
-                        <td><?php echo $sAchternaam?></td>
-                        <td><?php echo $iTelefoon?></td>
-                        <td><?php echo $sEmail?></td>
-                        <td><?php echo $sGeslacht?></td>
+                        <td class="text-left">ID</td>
+                        <td class="text-left"><?php echo $sUserId ?></td>
                     </tr>
-                   
-
-                </table>
-            </fieldset>
-            
-            
+                    <tr>
+                        <td class="text-left">Voornaam</td>
+                        <td class="text-left"><?php echo $sVoornaam?></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Achternaam</td>
+                        <td class="text-left"><?php echo $sAchternaam?></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">GSM</td>
+                        <td class="text-left"><?php echo $iTelefoon?></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Geslacht</td>
+                        <td class="text-left"><?php echo $sGeslacht?></td>
+                    </tr>
+                </tbody>
+            </table>
+                 
         </div>
         <!-- /#page-wrapper -->
 

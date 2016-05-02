@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Gegenereerd op: 31 mrt 2016 om 09:51
+-- Gegenereerd op: 02 mei 2016 om 19:09
 -- Serverversie: 5.6.26
 -- PHP-versie: 5.6.12
 
@@ -31,15 +31,19 @@ CREATE TABLE IF NOT EXISTS `Login` (
   `username` varchar(25) NOT NULL,
   `user_email` varchar(35) NOT NULL,
   `password` varchar(50) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `Login`
 --
 
 INSERT INTO `Login` (`id_user`, `username`, `user_email`, `password`) VALUES
+(1, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3'),
+(11, 'Niels', 'niels_bekkers_9@hotmail.com', '9b9824df65f716b71db9f51299346088'),
 (12, 'test', 'test', '098f6bcd4621d373cade4e832627b4f6'),
-(11, 'Niels', 'niels_bekkers_9@hotmail.com', '9b9824df65f716b71db9f51299346088');
+(42, 'hallo', 'hallo', '598d4c200461b81522a3328565c25f7c'),
+(44, 'test1', 'test1', '5a105e8b9d40e1329780d62ea2265d8a'),
+(45, 'test3', 'test3', '8ad8757baa8564dc136c1e07507f4a98');
 
 -- --------------------------------------------------------
 
@@ -48,7 +52,7 @@ INSERT INTO `Login` (`id_user`, `username`, `user_email`, `password`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `tblAfspraak` (
-  `klantID` int(5) NOT NULL,
+  `voornaam` varchar(30) NOT NULL,
   `KapsterID` int(5) NOT NULL,
   `BehandelingID` int(5) NOT NULL,
   `AfspraakID` int(10) NOT NULL,
@@ -60,8 +64,8 @@ CREATE TABLE IF NOT EXISTS `tblAfspraak` (
 -- Gegevens worden geëxporteerd voor tabel `tblAfspraak`
 --
 
-INSERT INTO `tblAfspraak` (`klantID`, `KapsterID`, `BehandelingID`, `AfspraakID`, `Datum`, `Tijd`) VALUES
-(1, 1, 1, 1, '2016-05-19', '16:30:00');
+INSERT INTO `tblAfspraak` (`voornaam`, `KapsterID`, `BehandelingID`, `AfspraakID`, `Datum`, `Tijd`) VALUES
+('1', 1, 1, 1, '2016-05-19', '16:30:00');
 
 -- --------------------------------------------------------
 
@@ -90,25 +94,23 @@ INSERT INTO `tblBehandeling` (`BehandelingID`, `Type`, `Tijd`, `Prijs`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `tblKlant` (
-  `KlantID` int(10) NOT NULL,
-  `Voornaam` text NOT NULL,
+  `id_user` int(5) NOT NULL,
+  `username` varchar(30) NOT NULL,
   `Achternaam` text NOT NULL,
-  `Straat` text NOT NULL,
-  `Nr` int(4) NOT NULL,
-  `Plaats` text NOT NULL,
-  `Postcode` int(4) NOT NULL,
+  `Voornaam` text NOT NULL,
   `Telefoonnr` int(9) NOT NULL,
-  `Email` text NOT NULL,
-  `Geboortedatum` date NOT NULL,
+  `user_email` varchar(35) NOT NULL,
   `Geslacht` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `tblKlant`
 --
 
-INSERT INTO `tblKlant` (`KlantID`, `Voornaam`, `Achternaam`, `Straat`, `Nr`, `Plaats`, `Postcode`, `Telefoonnr`, `Email`, `Geboortedatum`, `Geslacht`) VALUES
-(1, 'Jos', 'Voorbeeld', 'Dorpstraat', 24, 'Hasselt', 3500, 11234567, 'jos@example.com', '2016-03-01', 'Man');
+INSERT INTO `tblKlant` (`id_user`, `username`, `Achternaam`, `Voornaam`, `Telefoonnr`, `user_email`, `Geslacht`) VALUES
+(1, 'Jos', 'Voorbeeld', 'Dorpstraat', 11234567, 'jos@example.com', 'Man'),
+(12, 'test', 'test', 'test', 457463748, 'testblablabla', 'man'),
+(45, 'test3', 'test3', 'test3', 2147483647, 'testblablabla', 'man');
 
 -- --------------------------------------------------------
 
@@ -165,7 +167,7 @@ ALTER TABLE `tblBehandeling`
 -- Indexen voor tabel `tblKlant`
 --
 ALTER TABLE `tblKlant`
-  ADD PRIMARY KEY (`KlantID`);
+  ADD PRIMARY KEY (`id_user`,`username`);
 
 --
 -- Indexen voor tabel `tblPersoneel`
@@ -181,7 +183,7 @@ ALTER TABLE `tblPersoneel`
 -- AUTO_INCREMENT voor een tabel `Login`
 --
 ALTER TABLE `Login`
-  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=46;
 --
 -- AUTO_INCREMENT voor een tabel `tblBehandeling`
 --
@@ -191,7 +193,7 @@ ALTER TABLE `tblBehandeling`
 -- AUTO_INCREMENT voor een tabel `tblKlant`
 --
 ALTER TABLE `tblKlant`
-  MODIFY `KlantID` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=46;
 --
 -- AUTO_INCREMENT voor een tabel `tblPersoneel`
 --

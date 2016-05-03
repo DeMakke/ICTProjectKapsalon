@@ -18,8 +18,9 @@ class Klanten extends CI_Controller{
         $this->load->model('klantadmin_model');
     }
     public function index(){
-        
-        $this->dataUser['users'] = $this->klantadmin_model->get_all();
-        $this->load->view("klanten",$this->dataUser);
+
+        $id = $this->uri->segment(3);
+        $data['query'] = $this->klantadmin_model->get_all($id)->result();
+        $this->load->view('klanten',$data);
     }
 }

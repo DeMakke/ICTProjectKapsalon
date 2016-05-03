@@ -12,15 +12,9 @@ class klantadmin_model extends CI_Model
         $this->load->database();
     }
     
-    public function get_all(){
-        
-        $this->db->select('*');
-        $this->db->from('tblklant');
+    public function get_all($id){
        
-        //haalt gegevens op
-        $query = $this->db->get();
-        
-        //stuurt query uit als array
-        return $query->result_array();
+        return $this->db->get_where('tblklant');
+       
     }
 }

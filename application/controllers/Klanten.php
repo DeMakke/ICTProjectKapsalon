@@ -13,8 +13,13 @@ class Klanten extends CI_Controller{
             $this->session->set_flashdata('flash_data', 'You don\'t have access!');
             redirect('login');
         }
+        
+        $this->load->database();
+        $this->load->model('klantadmin_model');
     }
     public function index(){
-        $this->load->view("klanten");
+        
+        $this->dataUser['users'] = $this->klantadmin_model->get_all();
+        $this->load->view("klanten",$this->dataUser);
     }
 }

@@ -109,6 +109,45 @@
             </div>
             <!-- /.container-fluid -->
             
+            <table class="table-fill">
+                <thead>
+                </thead>
+                <tbody class="table-hover">
+                   
+                    <?php 
+  
+                       foreach ($users as $user) {
+                         $sUserId = $user['id_user'];
+                         $sVoornaam = $user['Voornaam'];
+                         $sAchternaam = $user['Achternaam'];
+                         $iTelefoon = $user['Telefoonnr'];
+                         //$sEmail = $user['Email'];
+                         $sGeslacht = $user['Geslacht'];
+                        }
+
+                    ?>
+                    <tr>
+                        <td class="text-left">ID</td>
+                        <td class="text-left"><?php echo $sUserId ?></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Voornaam</td>
+                        <td class="text-left"><?php echo $sVoornaam?></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Achternaam</td>
+                        <td class="text-left"><?php echo $sAchternaam?></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">GSM</td>
+                        <td class="text-left"><?php echo $iTelefoon?></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Geslacht</td>
+                        <td class="text-left"><?php echo $sGeslacht?></td>
+                    </tr>
+                </tbody>
+            </table>
 
         </div>
         <!-- /#page-wrapper -->

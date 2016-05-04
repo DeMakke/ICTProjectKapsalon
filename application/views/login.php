@@ -69,7 +69,7 @@
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#login">Inloggen</a>
+                        <a class="page-scroll" href="#login">Inloggen <img src="<?php echo base_url(); ?>/assets/img/login-icon.png" width="20"height="20" /></a>
                     </li>
                 </ul>
             </div>

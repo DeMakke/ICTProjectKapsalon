@@ -17,4 +17,10 @@ class klantadmin_model extends CI_Model
         return $this->db->get_where('tblklant');
        
     }
+    
+    function row_delete($id){
+        $id=$_GET['id'];
+        $this->db->where('id_user',$id);
+        $this->db->delete('tblklant');
+    }
 }

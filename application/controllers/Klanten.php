@@ -18,9 +18,20 @@ class Klanten extends CI_Controller{
         $this->load->model('klantadmin_model');
     }
     public function index(){
-
+        
+       $this->deleteguest();
+    }
+    
+    public function deleteguest(){
         $id = $this->uri->segment(3);
         $data['query'] = $this->klantadmin_model->get_all($id)->result();
         $this->load->view('klanten',$data);
+        
+        if(isset($_GET['id'])){
+            $id=$_GET['id'];
+            $this->load->model('klantadmin_model');
+            $this->klantadmin_model->row_delete($id);
+            redirect('klanten');
+        }
     }
 }

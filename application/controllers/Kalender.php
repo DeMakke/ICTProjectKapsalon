@@ -13,9 +13,15 @@ class Kalender extends CI_Controller{
             $this->session->set_flashdata('flash_data', 'You don\'t have access!');
             redirect('login');
         }
+        
+        $this->load->database();
+        $this->load->model('personeel_model');
     }
     public function index(){
-        $this->load->view("kalender");
+        
+        $id = $this->uri->segment(3);
+        $data['query'] = $this->personeel_model->get_all($id)->result();
+        $this->load->view("kalender",$data);
     }
 }
 

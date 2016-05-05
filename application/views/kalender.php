@@ -108,7 +108,29 @@
 
             </div>
             <!-- /.container-fluid -->
-            
+            <table class="table-fill">
+                <thead>
+                </thead>
+                <tbody class="table-hover">
+                   
+                     <?php foreach($query as $row): ?>
+                        <tr> 
+                            <td><?php echo $row->KapsterID;?>.</td>
+                            <td><?php echo $row->Voornaam;?>.</td>
+                            <td><?php echo $row->Achternaam;?>.</td>
+                            <td><?php echo $row->Straat;?>.</td>
+                            <td><?php echo $row->Nr;?>.</td>
+                            <td><?php echo $row->Plaats;?>.</td>
+                            <td><?php echo $row->Geslacht;?>.</td>
+                        </tr>
+                     <?php endforeach; ?>
+                </tbody>
+                <table>
+                <tr>
+                    <td><a href="<?php echo site_url('personeelToevoegen'); ?>">Toevoegen</a></td>
+                    <td><a href="<?php echo site_url('PersoneelVerwijderen'); ?>">Verwijderen</a></td>
+		</tr>
+                </table>
 
         </div>
         <!-- /#page-wrapper -->

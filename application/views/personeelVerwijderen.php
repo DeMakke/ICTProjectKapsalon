@@ -1,4 +1,4 @@
-<!--************************** KLANTENPAGINA in admingedeelte *****************************-->
+<!--*********************** KALENDER pagina in admingedeelte ***************************-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,10 +70,10 @@
                     <li>
                         <a href="home"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
-                    <li>
+                    <li class="active">
                         <a href="Kalender"><i class="fa fa-fw fa-bar-chart-o"></i> Kalender</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="Klanten"><i class="fa fa-fw fa-table"></i> Klanten</a>
                     </li>
         
@@ -93,11 +93,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Klanten
+                            Kalender
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-dashboard"></i> Klanten
+                                <i class="fa fa-dashboard"></i> Kalender
                             </li>
                         </ol>
                     </div>
@@ -108,27 +108,38 @@
 
             </div>
             <!-- /.container-fluid -->
-            
+            <p>Verwijder hier je personeel!</p>
             <table class="table-fill">
                 <thead>
                 </thead>
                 <tbody class="table-hover">
                    
-                     <?php foreach($query as $row): ?>
+                      <?php foreach($query as $row): ?>
                         <tr> 
-                            <td><?php echo $row->id_user;?>.</td>
-                            <td><?php echo $row->username;?>.</td>
-                            <td><?php echo $row->Achternaam;?>.</td>
+                            
                             <td><?php echo $row->Voornaam;?>.</td>
-                            <td><?php echo $row->Telefoonnr;?>.</td>
-                            <td><?php echo $row->user_email;?>.</td>
+                            <td><?php echo $row->Achternaam;?>.</td>
+                            <td><?php echo $row->Straat;?>.</td>
+                            <td><?php echo $row->Nr;?>.</td>
+                            <td><?php echo $row->Plaats;?>.</td>
                             <td><?php echo $row->Geslacht;?>.</td>
-                            <td><a href="<?php echo base_url()."/index.php/klanten?id=".$row->id_user ;?>" class="btn btn-danger" onclick="return confirm('Are you sure to Delete?')">Delete</a></td>
+                            <td><a href="<?php echo base_url()."/index.php/PersoneelUpdaten?id=".$row->KapsterID ;?>" class="btn btn-info" onclick="return confirm('Are you sure you want to Edit?')">Edit</a></td> 
+                            <td><a href="<?php echo base_url()."/index.php/PersoneelVerwijderen?id=".$row->KapsterID ;?>" class="btn btn-danger" onclick="return confirm('Are you sure to Delete?')">Delete</a></td>
+
                         </tr>
                      <?php endforeach; ?>
-                        
                 </tbody>
             </table>
+            <table>
+                <tr>
+                    <td><a href="<?php echo site_url('kalender'); ?>">Terug naar personeelslijst</a></td>
+                    
+		</tr>
+            </table>
+    
+			
+		
+                
 
         </div>
         <!-- /#page-wrapper -->

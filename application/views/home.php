@@ -108,7 +108,13 @@
 
             </div>
             <!-- /.container-fluid -->
-            
+            <center><p><h4>Welkom op het dashboard, hier kan je de instellingen aanpassen/bekijken van het systeem</h4><br/>
+                Ga naar de tab personeel om je personeel toe te voegen/verwijderen/bekijken<br/>
+                Ga naar de tab klanten om door je klantenbestand te bladeren en eventueel overbodige (oude) klanten te verwijderen<br/>
+                Ga naar de tab afspraak om je afspraken te bekijken en te beheren<br/><br/>
+                Dit is het admingedeelte, hier kunnen de ingelogde klanten dus nooit opgeraken...<br/>
+                Voor hun is er een aparte zone voorzien met enkel de benodigde functies<hr/></p></center>
+            <center><img src="https://lh3.ggpht.com/MrrIHmYJmLKw1cuZV5qARUBGME0FfCuooseICmkA-WqCFuPm92spGQfILIisy_bzXsI=w170" width="150"height="150"/></center>
 
         </div>
         <!-- /#page-wrapper -->

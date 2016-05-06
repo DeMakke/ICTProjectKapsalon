@@ -103,6 +103,10 @@
             </div>
             <!-- /.container-fluid -->
             
+            <center><p><h4>Welkom op je persoonlijk dashboard <u><?php $data = $this->session->userdata('usersessie'); echo $data['username'] ?></u>, hier kan je reservaties maken/bekijken</h4><br/>
+                Ga naar de tab afspraak om je afspraken te bekijken en te beheren<br/>
+                Hier kan je dus ook een nieuwe afspraak maken met je persoonlijke wensen<br/><hr/></p></center>
+            <center><img src="https://d13yacurqjgara.cloudfront.net/users/113259/screenshots/1188527/settings_big_1x.png" width="150"height="100"/></center>
 
         </div>
         <!-- /#page-wrapper -->

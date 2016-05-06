@@ -16,7 +16,7 @@
     <link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url(); ?>/assets/css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>/assets/css/tabelCSS.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="<?php echo base_url(); ?>/assets/css/plugins/morris.css" rel="stylesheet">
@@ -108,12 +108,11 @@
 
             </div>
             <!-- /.container-fluid -->
-            <p>Voeg hier je personeel toe!</p>
-    
-			<div id="login-form">
-                            <!--<h1><img src="https://cdn0.iconfinder.com/data/icons/academics-linear-black/2048/Register-512.png" width="80"height="80"/>Gelieve te registreren</h1>-->
+            
+			<div>
+                            <center><h2>Voeg hieronder je personeel toe!</h2></center>
 				<form method="post">
-					<table align="center" width="30%" border="0">
+					<table align="center" id="personeeltoevoegen">
 						<tr>
 							<td><input class="form-control" name="surname" placeholder="Voornaam" type="text" value="<?php echo set_value('surname'); ?>" /></td><br/>
                                                         <td><span class="text-danger"></span></td>
@@ -163,20 +162,12 @@
 						</tr>
 					</table>
 				</form>
-			</div>
-            <div>
-                <table>
-                <tr>
-                    <td><a href="<?php echo site_url('personeel'); ?>">Terug naar personeelslijst</a></td>
-                    
-		</tr>
-            </table>
-            </div> 
-            
-		
-                
+			
+                        
+    
+                <p><a href="<?php echo site_url('personeel'); ?>"><img border="0" alt="Toevoegen" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/left_round.png" width="50" height="50"></a></p>
 
-        </div>
+                        </div>
         <!-- /#page-wrapper -->
 
     </div>

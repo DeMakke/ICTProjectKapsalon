@@ -16,7 +16,7 @@
     <link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url(); ?>/assets/css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>/assets/css/tabelCSS.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="<?php echo base_url(); ?>/assets/css/plugins/morris.css" rel="stylesheet">
@@ -108,7 +108,7 @@
 
             </div>
             <!-- /.container-fluid -->
-            <p>Verwijder hier je personeel!</p>
+            <center><h2>Verwijder/bewerk hieronder je personeel!</h2></center><br/>
             <table class="table-fill">
                 <thead>
                 </thead>
@@ -130,17 +130,8 @@
                      <?php endforeach; ?>
                 </tbody>
             </table>
-            <table>
-                <tr>
-                    <td><a href="<?php echo site_url('Personeel'); ?>">Terug naar personeelslijst</a></td>
-                    
-		</tr>
-            </table>
-    
-			
-		
-                
-
+            <br/>
+            <p><a href="<?php echo site_url('personeel'); ?>"><img border="0" alt="Toevoegen" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/left_round.png" width="50" height="50"></a></p>
         </div>
         <!-- /#page-wrapper -->
 

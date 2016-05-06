@@ -61,7 +61,7 @@ class PersoneelToevoegen extends CI_Controller{
             if ($this->personeel_model->insertIntoPersoneel($data)) {
                 $this->session->set_flashdata('flashSuccess','<center><br/><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Light_green_check.svg" width="30" height="30"/><h1>Proficiat! U bent succesvol geregistreerd</h1><center>');
                     header('Refresh: 5; URL=');
-                    redirect('kalender');
+                    redirect('Personeel');
             }
             else
             {

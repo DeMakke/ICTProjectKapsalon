@@ -1,4 +1,4 @@
-<!--*********************** KALENDER pagina in admingedeelte ***************************-->
+<!--*********************** PERSONEEL pagina in admingedeelte ***************************-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +16,7 @@
     <link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url(); ?>/assets/css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>/assets/css/tabelCSS.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="<?php echo base_url(); ?>/assets/css/plugins/morris.css" rel="stylesheet">
@@ -125,13 +125,10 @@
                         </tr>
                      <?php endforeach; ?>
                 </tbody>
-                <table>
-                <tr>
-                    <td><a href="<?php echo site_url('personeelToevoegen'); ?>">Toevoegen</a></td>
-                    <td><a href="<?php echo site_url('PersoneelVerwijderen'); ?>">Verwijderen</a></td>
-		</tr>
-                </table>
-
+            </table>
+            
+                <br/>
+                <center><p id="buttons"><a href="<?php echo site_url('personeelToevoegen'); ?>"><img border="0" alt="Toevoegen" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/add_user.png" width="50" height="50"></a> &nbsp;<a href="<?php echo site_url('PersoneelVerwijderen'); ?>"><img border="0" alt="Toevoegen" src="http://www.veryicon.com/icon/ico/System/Icons8%20Metro%20Style/Users%20Remove%20user.ico" width="50" height="50"></a></p></center>
         </div>
         <!-- /#page-wrapper -->
 

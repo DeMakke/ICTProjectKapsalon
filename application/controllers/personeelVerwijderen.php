@@ -34,7 +34,7 @@ class personeelVerwijderen extends CI_Controller{
             $id=$_GET['id'];
             $this->load->model('personeel_model');
             $this->personeel_model->row_delete($id);
-            redirect('kalender');
+            redirect('Personeel');
         }
     }
     

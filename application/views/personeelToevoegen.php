@@ -71,7 +71,7 @@
                         <a href="home"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li class="active">
-                        <a href="Kalender"><i class="fa fa-fw fa-bar-chart-o"></i> Kalender</a>
+                        <a href="Personeel"><i class="fa fa-fw fa-bar-chart-o"></i> Personeel</a>
                     </li>
                     <li>
                         <a href="Klanten"><i class="fa fa-fw fa-table"></i> Klanten</a>
@@ -93,11 +93,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Kalender
+                            Personeel
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-dashboard"></i> Kalender
+                                <i class="fa fa-dashboard"></i> Personeel
                             </li>
                         </ol>
                     </div>
@@ -167,7 +167,7 @@
             <div>
                 <table>
                 <tr>
-                    <td><a href="<?php echo site_url('kalender'); ?>">Terug naar personeelslijst</a></td>
+                    <td><a href="<?php echo site_url('personeel'); ?>">Terug naar personeelslijst</a></td>
                     
 		</tr>
             </table>

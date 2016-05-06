@@ -71,7 +71,7 @@
                         <a href="home"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="Kalender"><i class="fa fa-fw fa-bar-chart-o"></i> Kalender</a>
+                        <a href="Personeel"><i class="fa fa-fw fa-bar-chart-o"></i> Personeel</a>
                     </li>
                     <li>
                         <a href="Klanten"><i class="fa fa-fw fa-table"></i> Klanten</a>
@@ -110,7 +110,8 @@
             <!-- /.container-fluid -->
             <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.kanakkan.com/images/14588894232049024503dummy_profpic.jpg" width="150"height="150" alt="Dummy"/></p>
             <br/>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;Naam</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;Naam: <?= $this->session->userdata('username') ?></p>
+            
         </div>
         <!-- /#page-wrapper -->
 

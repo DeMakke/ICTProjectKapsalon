@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @name Kalender.php
  * @author Niels Bekkers
  */
-class Kalender extends CI_Controller{
+class Personeel extends CI_Controller{
     function __construct() {
         parent::__construct();
         
@@ -21,7 +21,7 @@ class Kalender extends CI_Controller{
         
         $id = $this->uri->segment(3);
         $data['query'] = $this->personeel_model->get_all($id)->result();
-        $this->load->view("kalender",$data);
+        $this->load->view("personeel",$data);
     }
 }
 

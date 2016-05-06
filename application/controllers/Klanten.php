@@ -31,6 +31,7 @@ class Klanten extends CI_Controller{
             $id=$_GET['id'];
             $this->load->model('klantadmin_model');
             $this->klantadmin_model->row_delete($id);
+            $this->klantadmin_model->row_delete_login($id);
             redirect('klanten');
         }
     }

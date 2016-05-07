@@ -57,8 +57,15 @@ p {
 </head>
 <body>
 	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
+            <center><p><img src="https://cdn1.iconfinder.com/data/icons/ui-icons-2/512/wrong-01-512.png" width="100" height="100"/> </p></center><br/>
+            
+                
+            <center> <h1>Oops! </h1>
+                
+                
+                <b>De gebruiker die u wenst te registreren is al in ons systeem bekend, probeer een andere gebruikersnaam!</b><br/></center>
+            <center><a href="<?php echo site_url('Registreer'); ?>"><img border="0" alt="Toevoegen" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/left_round.png" width="50" height="50"></a></center>
+                
 	</div>
 </body>
 </html>

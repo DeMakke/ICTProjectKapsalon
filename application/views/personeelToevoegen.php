@@ -1,4 +1,4 @@
-<!--*********************** KALENDER pagina in admingedeelte ***************************-->
+<!--*********************** PERSONEELTOEVOEGEN pagina in admingedeelte ***************************-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -108,57 +108,55 @@
 
             </div>
             <!-- /.container-fluid -->
-            
-			<div>
                             <center><h2>Voeg hieronder je personeel toe!</h2></center>
-				<form method="post">
+                            <form method="post">
 					<table align="center" id="personeeltoevoegen">
 						<tr>
 							<td><input class="form-control" name="surname" placeholder="Voornaam" type="text" value="<?php echo set_value('surname'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
                                                 <tr>
 							<td><input class="form-control" name="name" placeholder="Achternaam" type="text" value="<?php echo set_value('name'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
                                                 <tr>
 							<td><input class="form-control" name="street" placeholder="Straat" type="text" value="<?php echo set_value('street'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
                                                 <tr>
                                                     <td><input class="form-control" name="nr" placeholder="Nr" type="number" value="<?php echo set_value('nr'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
                                                 <tr>
 							<td><input class="form-control" name="city" placeholder="Plaats" type="text" value="<?php echo set_value('city'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
                                                 <tr>
 							<td><input class="form-control" name="zipcode" placeholder="Postcode" type="Number" value="<?php echo set_value('zipcode'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
                                                 <tr>
                                                     <td><input class="form-control" name="phone" placeholder="Telefoon" type="tel" value="<?php echo set_value('phone'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
                                                 <tr>
 							<td><input class="form-control" name="cellphone" placeholder="Gsm" type="tel" value="<?php echo set_value('cellphone'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
 						<tr>
 							<td><input class="form-control" name="email" placeholder="Email" type="text" value="<?php echo set_value('email'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
 						<tr>
                                                     <td><input class="form-control" name="dob" placeholder="Geboortedatum" type="date" value="<?php echo set_value('dob'); ?>"/></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
                                                 </tr>
                                                 <tr>
                                                     <td><input class="form-control" name="gender" placeholder="Geslacht" type="text" value="<?php echo set_value('gender'); ?>"/></td><br/>
-                                                    <td><span class="text-danger"></span></td>
+                                                    
                                                 </tr>   
 						<tr>
-							<td><button type="submit" name="btn-signup">Toevoegen</button></td>
+							<td class="lastrow"><button type="submit" name="btn-signup" class="button">Toevoegen</button></td>
 						</tr>
 					</table>
 				</form>

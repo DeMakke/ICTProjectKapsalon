@@ -39,10 +39,10 @@ class ProfielUser extends CI_Controller{
     {
         $data = $this->session->userdata['usersessie'];
         
-        $this->form_validation->set_rules('surname', 'Voornaam');
-        $this->form_validation->set_rules('name', 'Achternaam');
-        $this->form_validation->set_rules('phone', 'Telefoonnr');
-        $this->form_validation->set_rules('gender', 'Geslacht');
+        $this->form_validation->set_rules('surname', 'Voornaam','trim|required');
+        $this->form_validation->set_rules('name', 'Achternaam','trim|required');
+        $this->form_validation->set_rules('phone', 'Telefoonnr','trim|required');
+        $this->form_validation->set_rules('gender', 'Geslacht','trim|required');
         
         
         //valideer forumier input

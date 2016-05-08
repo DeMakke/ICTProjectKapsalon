@@ -1,4 +1,4 @@
-<!--************************** PROFIELPAGINA in Usergedeelte *****************************-->
+<!--************************** PROFIELPAGINA REGISTREER in Usergedeelte *****************************-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,13 +10,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Welkom <?= $this->session->userdata('username') ?></title>
+    <title>Welkom <?php $data = $this->session->userdata('usersessie'); echo $data['username'] ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url(); ?>/assets/css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>/assets/css/tabelCSS.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="<?php echo base_url(); ?>/assets/css/plugins/morris.css" rel="stylesheet">
@@ -101,36 +101,37 @@
 
             </div>
             <!-- /.container-fluid -->
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.kanakkan.com/images/14588894232049024503dummy_profpic.jpg" width="150"height="150" alt="Dummy"/></p>
+            <!--<p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.kanakkan.com/images/14588894232049024503dummy_profpic.jpg" width="150"height="150" alt="Dummy"/></p>
             <br/>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;Gegevens: <?php $data = $this->session->userdata('usersessie'); echo $data['username']; ?></p>
             <p><?php if($this->session->flashdata('flashSuccess')):?>
                 <p class='flashMsg flashSuccess'> <?=$this->session->flashdata('flashSuccess')?> </p>
-                    <?php endif?></p>
+                    <?php endif?></p>-->
         
 		<center>
-			<div id="login-form">
+			<div id="addprofiledata">
+                            <h2>Vervolledig je profiel!</h2>
                             <!--<h1><img src="https://cdn0.iconfinder.com/data/icons/academics-linear-black/2048/Register-512.png" width="80"height="80"/>Gelieve te registreren</h1>-->
 				<form method="post">
-					<table align="center" width="30%" border="0">
+					<table align="center" width="40%" border="0" class="profiledata">
 						<tr>
-							<td><input class="form-control" name="surname" placeholder="Voornaam" type="text" value="<?php echo set_value('surname'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                    <td><input class="form-control" name="surname" placeholder="Voornaam" type="text" value="<?php echo set_value('surname'); ?>" required="required" /><?php echo form_error('surname'); ?></td><br/>
+                                                     
 						</tr>
 						<tr>
-							<td><input class="form-control" name="name" placeholder="Achternaam" type="text" value="<?php echo set_value('name'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+							<td><input class="form-control" name="name" placeholder="Achternaam" type="text" value="<?php echo set_value('name'); ?>" required="required"/><?php echo form_error('name'); ?></td><br/>
+                                                        
 						</tr>
 						<tr>
-                                                    <td><input class="form-control" name="phone" placeholder="Telefoon" type="tel" value="<?php echo set_value('phone'); ?>"/></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                    <td><input class="form-control" name="phone" placeholder="Telefoon" type="tel" value="<?php echo set_value('phone'); ?>" required="required" /><?php echo form_error('phone'); ?></td><br/>
+                                                      
                                                 </tr>
                                                 <tr>
-                                                    <td><input class="form-control" name="gender" placeholder="Geslacht" type="text" value="<?php echo set_value('gender'); ?>"/></td><br/>
-                                                    <td><span class="text-danger"></span></td>
+                                                    <td><input class="form-control" name="gender" placeholder="Geslacht" type="text" value="<?php echo set_value('gender'); ?>" required="required"/><?php echo form_error('gender'); ?></td><br/>
+                                                   
                                                 </tr>   
 						<tr>
-							<td><button type="submit" name="btn-signup">Registreer</button></td>
+                                                    <td id="lastrowprofiel"><button type="submit" name="btn-signup" id="button">Voeg Toe</button></td>
 						</tr>
 					</table>
 				</form>

@@ -23,9 +23,9 @@ class Registreer extends CI_Controller
     {
         //validatie regels
         
-        $this->form_validation->set_rules('username', 'username');
-        $this->form_validation->set_rules('email', 'user_email');
-        $this->form_validation->set_rules('password', 'password');
+        $this->form_validation->set_rules('username', 'username','trim|required');
+        $this->form_validation->set_rules('email', 'user_email','trim|required|valid_email');
+        $this->form_validation->set_rules('password', 'password','trim|required');
         
         //valideer forumier input
         if ($this->form_validation->run() == FALSE)
@@ -50,13 +50,13 @@ class Registreer extends CI_Controller
                     header('Refresh: 5; URL=');
                     redirect('Registreer');
                     
-
             }
             else
             {
                 //error
                $this->session->set_flashdata('Oops! er is iets misgegaan, probeer nogmaals!');
                 redirect('');
+                
             }
         }
 

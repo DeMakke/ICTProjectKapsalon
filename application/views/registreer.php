@@ -18,15 +18,15 @@
 				<form method="post">
 					<table align="center" width="30%" border="0">
 						<tr>
-							<td><input class="form-control" name="username" placeholder="Gebruikersnaam" type="text" value="<?php echo set_value('username'); ?>" /></td><br/>
+                                                    <td><input class="form-control" name="username" placeholder="Gebruikersnaam" type="text" value="<?php echo set_value('username'); ?>" /></td><br/>
                                                         <td><span class="text-danger"><?php echo form_error('username'); ?></span></td>
 						</tr>
 						<tr>
-							<td><input class="form-control" name="email" placeholder="Email" type="text" value="<?php echo set_value('email'); ?>" /></td><br/>
+                                                    <td><input class="form-control" name="email" placeholder="Email" type="text" value="<?php echo set_value('email'); ?>" /></td><br/>
                                                         <td><span class="text-danger"><?php echo form_error('email'); ?></span></td>
 						</tr>
 						<tr>
-							<td><input class="form-control" name="password" placeholder="Wachtwoord" type="password" /></td><br/>
+                                                    <td><input class="form-control" name="password" placeholder="Wachtwoord" type="password" /></td><br/>
                                                         <td><span class="text-danger"><?php echo form_error('password'); ?></span></td>
 						</tr>
 						<tr>

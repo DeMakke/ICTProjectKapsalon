@@ -198,3 +198,11 @@ td.calendar-day, td.calendar-day-np {
 	border-bottom:1px solid #999; 
 	border-right:1px solid #999; 
 }
+
+.text-danger{
+    font-family: sans-serif;
+    position: absolute;
+    font-family: "chalkboard", serif;
+    color: red;
+    margin-left: 70px;
+}

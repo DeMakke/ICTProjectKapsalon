@@ -108,7 +108,7 @@
                 <tbody class="table-hover">
                     <tr>
                         <td><p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.kanakkan.com/images/14588894232049024503dummy_profpic.jpg" width="150"height="150" alt="Dummy"/></p></td>
-                        <td><br/><p>&nbsp;&nbsp;&nbsp;&nbsp;Gegevens: <?php $data = $this->session->userdata('usersessie'); echo $data['username']; ?></p></td>
+                        <td><br/><p>&nbsp;&nbsp;&nbsp;&nbsp;<!--Gegevens: <?php $data = $this->session->userdata('usersessie'); echo $data['username']; ?>--></p></td>
                     </tr>
                     <?php 
                      foreach ($users as $user) {

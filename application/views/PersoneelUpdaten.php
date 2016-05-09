@@ -1,4 +1,4 @@
-<!--*********************** KALENDER pagina in admingedeelte ***************************-->
+<!--*********************** PERSONEELTOEVOEGEN pagina in admingedeelte ***************************-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +16,7 @@
     <link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url(); ?>/assets/css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>/assets/css/tabelCSS.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="<?php echo base_url(); ?>/assets/css/plugins/morris.css" rel="stylesheet">
@@ -71,7 +71,7 @@
                         <a href="home"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li class="active">
-                        <a href="Kalender"><i class="fa fa-fw fa-bar-chart-o"></i> Kalender</a>
+                        <a href="Personeel"><i class="fa fa-fw fa-bar-chart-o"></i> Personeel</a>
                     </li>
                     <li>
                         <a href="Klanten"><i class="fa fa-fw fa-table"></i> Klanten</a>
@@ -93,11 +93,11 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Kalender
+                            Personeel
                         </h1>
                         <ol class="breadcrumb">
                             <li class="active">
-                                <i class="fa fa-dashboard"></i> Kalender
+                                <i class="fa fa-dashboard"></i> Personeel
                             </li>
                         </ol>
                     </div>
@@ -108,75 +108,66 @@
 
             </div>
             <!-- /.container-fluid -->
-            <p>Verwijder hier je personeel!</p>
-    
-			<div id="login-form">
-                            <!--<h1><img src="https://cdn0.iconfinder.com/data/icons/academics-linear-black/2048/Register-512.png" width="80"height="80"/>Gelieve te registreren</h1>-->
-				<form method="post">
-					<table align="center" width="30%" border="0">
+           
+                               
+                            <center><h2>Update hieronder je personeel!</h2></center>
+                            <form method="post">
+					<table align="center" id="personeeltoevoegen">
 						<tr>
 							<td><input class="form-control" name="surname" placeholder="Voornaam" type="text" value="<?php echo set_value('surname'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
                                                 <tr>
 							<td><input class="form-control" name="name" placeholder="Achternaam" type="text" value="<?php echo set_value('name'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
                                                 <tr>
 							<td><input class="form-control" name="street" placeholder="Straat" type="text" value="<?php echo set_value('street'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
                                                 <tr>
                                                     <td><input class="form-control" name="nr" placeholder="Nr" type="number" value="<?php echo set_value('nr'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
                                                 <tr>
 							<td><input class="form-control" name="city" placeholder="Plaats" type="text" value="<?php echo set_value('city'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
                                                 <tr>
 							<td><input class="form-control" name="zipcode" placeholder="Postcode" type="Number" value="<?php echo set_value('zipcode'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
                                                 <tr>
                                                     <td><input class="form-control" name="phone" placeholder="Telefoon" type="tel" value="<?php echo set_value('phone'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
                                                 <tr>
 							<td><input class="form-control" name="cellphone" placeholder="Gsm" type="tel" value="<?php echo set_value('cellphone'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
 						<tr>
 							<td><input class="form-control" name="email" placeholder="Email" type="text" value="<?php echo set_value('email'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
 						</tr>
 						<tr>
                                                     <td><input class="form-control" name="dob" placeholder="Geboortedatum" type="date" value="<?php echo set_value('dob'); ?>"/></td><br/>
-                                                        <td><span class="text-danger"></span></td>
+                                                        
                                                 </tr>
                                                 <tr>
                                                     <td><input class="form-control" name="gender" placeholder="Geslacht" type="text" value="<?php echo set_value('gender'); ?>"/></td><br/>
-                                                    <td><span class="text-danger"></span></td>
+                                                    
                                                 </tr>   
 						<tr>
-							<td><button type="submit" name="btn-signup">Toevoegen</button></td>
+							<td class="lastrow"><button type="submit" name="btn-signup" class="button">Updaten</button></td>
 						</tr>
 					</table>
 				</form>
-			</div>
-            <div>
-                <table>
-                <tr>
-                    <td><a href="<?php echo site_url('kalender'); ?>">Terug naar personeelslijst</a></td>
-                    
-		</tr>
-            </table>
-            </div> 
-            
-		
-                
+			
+                        
+    
+                <p><a href="<?php echo site_url('personeel'); ?>"><img border="0" alt="Toevoegen" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/left_round.png" width="50" height="50"></a></p>
 
-        </div>
+                        </div>
         <!-- /#page-wrapper -->
 
     </div>

@@ -33,12 +33,13 @@ class personeel_model extends CI_Model
         $this->db->delete('tblpersoneel');
     }
     
-    //update functie
     
-//    function update_student_id1($id,$data)
-//    {
-//        $this->db->where('KapsterID', $id);
-//        $this->db->update('tblpersoneel', $data);
-//    }
+    //update functie
+    function update_personel($id,$data){
+        $id=$_GET['id'];
+        $this->db->where('KapsterID',$id);
+        return $this->db->update('tblpersoneel',$data);
+    }
+    
     
 }

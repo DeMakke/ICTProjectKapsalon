@@ -26,17 +26,17 @@ class PersoneelToevoegen extends CI_Controller{
     function toevoegen()
     {
         //validatie regels
-        $this->form_validation->set_rules('name', 'Voornaam');
-        $this->form_validation->set_rules('surname', 'Achternaam');
-        $this->form_validation->set_rules('street', 'straat');
-        $this->form_validation->set_rules('nr', 'nr');
-        $this->form_validation->set_rules('city', 'plaats');
-        $this->form_validation->set_rules('zipcode', 'postcode');
-        $this->form_validation->set_rules('phone', 'Telefoonnr');
-        $this->form_validation->set_rules('cellphone', 'Gsmnr');
-        $this->form_validation->set_rules('email', 'email');
-        $this->form_validation->set_rules('dob', 'Geboortedatum');
-        $this->form_validation->set_rules('gender', 'Geslacht');
+        $this->form_validation->set_rules('name', 'Voornaam','trim|required');
+        $this->form_validation->set_rules('surname', 'Achternaam','trim|required');
+        $this->form_validation->set_rules('street', 'straat','trim|required');
+        $this->form_validation->set_rules('nr', 'nr','trim|required');
+        $this->form_validation->set_rules('city', 'plaats','trim|required');
+        $this->form_validation->set_rules('zipcode', 'postcode','trim|required');
+        $this->form_validation->set_rules('phone', 'Telefoonnr','trim|required');
+        $this->form_validation->set_rules('cellphone', 'Gsmnr','trim|required');
+        $this->form_validation->set_rules('email', 'email','trim|required');
+        $this->form_validation->set_rules('dob', 'Geboortedatum','trim|required');
+        $this->form_validation->set_rules('gender', 'Geslacht','trim|required');
         
         //valideer formulier input
         

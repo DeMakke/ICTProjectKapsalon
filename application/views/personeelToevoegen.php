@@ -112,47 +112,47 @@
                             <form method="post">
 					<table align="center" id="personeeltoevoegen">
 						<tr>
-							<td><input class="form-control" name="surname" placeholder="Voornaam" type="text" value="<?php echo set_value('surname'); ?>" /></td><br/>
+							<td><input class="form-control" name="surname" placeholder="Voornaam" type="text" value="<?php echo set_value('surname'); ?>" /><?php echo form_error('surname'); ?></td><br/>
                                                         
 						</tr>
                                                 <tr>
-							<td><input class="form-control" name="name" placeholder="Achternaam" type="text" value="<?php echo set_value('name'); ?>" /></td><br/>
+							<td><input class="form-control" name="name" placeholder="Achternaam" type="text" value="<?php echo set_value('name'); ?>" /><?php echo form_error('name'); ?></td><br/>
                                                         
 						</tr>
                                                 <tr>
-							<td><input class="form-control" name="street" placeholder="Straat" type="text" value="<?php echo set_value('street'); ?>" /></td><br/>
+							<td><input class="form-control" name="street" placeholder="Straat" type="text" value="<?php echo set_value('street'); ?>" /><?php echo form_error('street'); ?></td><br/>
                                                         
 						</tr>
                                                 <tr>
-                                                    <td><input class="form-control" name="nr" placeholder="Nr" type="number" value="<?php echo set_value('nr'); ?>" /></td><br/>
+                                                    <td><input class="form-control" name="nr" placeholder="Nr" type="number" value="<?php echo set_value('nr'); ?>" /><?php echo form_error('nr'); ?></td><br/>
                                                         
 						</tr>
                                                 <tr>
-							<td><input class="form-control" name="city" placeholder="Plaats" type="text" value="<?php echo set_value('city'); ?>" /></td><br/>
+							<td><input class="form-control" name="city" placeholder="Plaats" type="text" value="<?php echo set_value('city'); ?>" /><?php echo form_error('city'); ?></td><br/>
                                                         
 						</tr>
                                                 <tr>
-							<td><input class="form-control" name="zipcode" placeholder="Postcode" type="Number" value="<?php echo set_value('zipcode'); ?>" /></td><br/>
+							<td><input class="form-control" name="zipcode" placeholder="Postcode" type="Number" value="<?php echo set_value('zipcode'); ?>" /><?php echo form_error('zipcode'); ?></td><br/>
                                                         
 						</tr>
                                                 <tr>
-                                                    <td><input class="form-control" name="phone" placeholder="Telefoon" type="tel" value="<?php echo set_value('phone'); ?>" /></td><br/>
+                                                    <td><input class="form-control" name="phone" placeholder="Telefoon" type="tel" value="<?php echo set_value('phone'); ?>" /><?php echo form_error('phone'); ?></td><br/>
                                                         
 						</tr>
                                                 <tr>
-							<td><input class="form-control" name="cellphone" placeholder="Gsm" type="tel" value="<?php echo set_value('cellphone'); ?>" /></td><br/>
+							<td><input class="form-control" name="cellphone" placeholder="Gsm" type="tel" value="<?php echo set_value('cellphone'); ?>" /><?php echo form_error('cellphone'); ?></td><br/>
                                                         
 						</tr>
 						<tr>
-							<td><input class="form-control" name="email" placeholder="Email" type="text" value="<?php echo set_value('email'); ?>" /></td><br/>
+							<td><input class="form-control" name="email" placeholder="Email" type="text" value="<?php echo set_value('email'); ?>" /><?php echo form_error('email'); ?></td><br/>
                                                         
 						</tr>
 						<tr>
-                                                    <td><input class="form-control" name="dob" placeholder="Geboortedatum" type="date" value="<?php echo set_value('dob'); ?>"/></td><br/>
+                                                    <td><input class="form-control" name="dob" placeholder="Geboortedatum" type="date" value="<?php echo set_value('dob'); ?>"/><?php echo form_error('dob'); ?></td><br/>
                                                         
                                                 </tr>
                                                 <tr>
-                                                    <td><input class="form-control" name="gender" placeholder="Geslacht" type="text" value="<?php echo set_value('gender'); ?>"/></td><br/>
+                                                    <td><input class="form-control" name="gender" placeholder="Geslacht" type="text" value="<?php echo set_value('gender'); ?>"/><?php echo form_error('gender'); ?></td><br/>
                                                     
                                                 </tr>   
 						<tr>

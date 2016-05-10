@@ -122,6 +122,10 @@
 							<td><input class="form-control" name="name" placeholder="Achternaam" type="text" value="<?php echo set_value('name'); ?>" required="required"/><?php echo form_error('name'); ?></td><br/>
                                                         
 						</tr>
+                                                <tr>
+							<td><input class="form-control" name="email" placeholder="Email" type="email" value="<?php echo set_value('email'); ?>" required="required"/><?php echo form_error('email'); ?></td><br/>
+                                                        
+						</tr>
 						<tr>
                                                     <td><input class="form-control" name="phone" placeholder="Telefoon" type="tel" value="<?php echo set_value('phone'); ?>" required="required" /><?php echo form_error('phone'); ?></td><br/>
                                                       

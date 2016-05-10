@@ -124,13 +124,17 @@
                          $sVoornaam = $user['Voornaam'];
                          $sAchternaam = $user['Achternaam'];
                          $iTelefoon = $user['Telefoonnr'];
-                         //$sEmail = $user['Email'];
+                         $sEmail = $user['user_email'];
                          $sGeslacht = $user['Geslacht'];
                      }
                     ?>
                     <tr>
                         <td class="text-left">ID</td>
                         <td class="text-left"><?php echo $sUserId ?></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Email</td>
+                        <td class="text-left"><?php echo $sEmail ?></td>
                     </tr>
                     <tr>
                         <td class="text-left">Voornaam</td>

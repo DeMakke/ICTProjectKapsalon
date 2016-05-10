@@ -43,7 +43,7 @@ class ProfielUser extends CI_Controller{
         $this->form_validation->set_rules('name', 'Achternaam','trim|required');
         $this->form_validation->set_rules('phone', 'Telefoonnr','trim|required');
         $this->form_validation->set_rules('gender', 'Geslacht','trim|required');
-        
+        $this->form_validation->set_rules('email','user_email', 'trim|required');
         
         //valideer forumier input
         if ($this->form_validation->run() == FALSE)
@@ -57,6 +57,7 @@ class ProfielUser extends CI_Controller{
             $data2 = array(
                 'id_user' => $data['id_user'],
                 'username' => $data['username'],
+                'user_email' => $this->input->post('email'),
                 'Voornaam' => $this->input->post('surname'),
                 'Achternaam' => $this->input->post('name'),
                 'Telefoonnr' => $this->input->post('phone'),

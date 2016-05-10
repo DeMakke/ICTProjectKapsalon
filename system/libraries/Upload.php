@@ -53,21 +53,21 @@ class CI_Upload {
 	 *
 	 * @var	int
 	 */
-	public $max_size = 100;
+	public $max_size = 1500;
 
 	/**
 	 * Maximum image width
 	 *
 	 * @var	int
 	 */
-	public $max_width = 1024;
+	public $max_width = 1486;
 
 	/**
 	 * Maximum image height
 	 *
 	 * @var	int
 	 */
-	public $max_height = 768;
+	public $max_height = 1735;
 
 	/**
 	 * Minimum image width

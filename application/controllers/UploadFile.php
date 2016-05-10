@@ -26,7 +26,7 @@ class UploadFile extends CI_Controller {
         //stel instellingen in
         $config['upload_path'] = './uploads/';
         $config['allowed_types'] = 'png';
-        $config['max_size']    = '100';
+        $config['max_size']    = '1500';
         $config['file_name'] = $data['username'];
 
         //laad de upload library in
@@ -35,9 +35,9 @@ class UploadFile extends CI_Controller {
         if (!$this->upload->do_upload('filename'))
         {
             //mislukt
-            $upload_error = array('error' => $this->upload->display_errors());
-            $this->load->view('profielUser', $upload_error);
-            //redirect('profielUser');
+            //$upload_error = array('error' => $this->upload->display_errors());
+            $this->load->view('errors/html/error_UploadBestand.php');
+            
         }
         else
         {

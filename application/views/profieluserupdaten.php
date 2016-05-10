@@ -1,4 +1,4 @@
-<!--************************** PROFIELPAGINA in Usergedeelte *****************************-->
+<!--************************** PROFIELPAGINA REGISTREER in Usergedeelte *****************************-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,13 +10,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Welkom <?= $this->session->userdata('username') ?></title>
+    <title>Welkom <?php $data = $this->session->userdata('usersessie'); echo $data['username'] ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url(); ?>/assets/css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>/assets/css/tabelCSS.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="<?php echo base_url(); ?>/assets/css/plugins/morris.css" rel="stylesheet">
@@ -101,51 +101,37 @@
 
             </div>
             <!-- /.container-fluid -->
+            <center>
+			<div id="addprofiledata">
+                            <h2>Vervolledig je profiel!</h2>
+                            <!--<h1><img src="https://cdn0.iconfinder.com/data/icons/academics-linear-black/2048/Register-512.png" width="80"height="80"/>Gelieve te registreren</h1>-->
+				<form method="post">
+					<table align="center" width="40%" border="0" class="profiledata">
+						<tr>
+                                                    <td><input class="form-control" name="surname" placeholder="Voornaam" type="text" value="<?php echo set_value('surname'); ?>" required="required" /><?php echo form_error('surname'); ?></td><br/>
+                                                     
+						</tr>
+						<tr>
+							<td><input class="form-control" name="name" placeholder="Achternaam" type="text" value="<?php echo set_value('name'); ?>" required="required"/><?php echo form_error('name'); ?></td><br/>
+                                                        
+						</tr>
+						<tr>
+                                                    <td><input class="form-control" name="phone" placeholder="Telefoon" type="tel" value="<?php echo set_value('phone'); ?>" required="required" /><?php echo form_error('phone'); ?></td><br/>
+                                                      
+                                                </tr>
+                                                <tr>
+                                                    <td><input class="form-control" name="gender" placeholder="Geslacht" type="text" value="<?php echo set_value('gender'); ?>" required="required"/><?php echo form_error('gender'); ?></td><br/>
+                                                   
+                                                </tr>   
+						<tr>
+                                                    <td id="lastrowprofiel"><button type="submit" name="btn-signup" id="button">Update</button></td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</center>
             
-            <table class="table-fill">
-                <thead>
-                </thead>
-                <tbody class="table-hover">
-                    <tr>
-                        <td><p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.kanakkan.com/images/14588894232049024503dummy_profpic.jpg" width="150"height="150" alt="Dummy"/></p></td>
-                        <td><br/><p>&nbsp;&nbsp;&nbsp;&nbsp;<!--Gegevens: <?php $data = $this->session->userdata('usersessie'); echo $data['username']; ?>--></p></td>
-                    </tr>
-                    <?php 
-                     foreach ($users as $user) {
-                         $sUserId = $user['id_user'];
-                         $sVoornaam = $user['Voornaam'];
-                         $sAchternaam = $user['Achternaam'];
-                         $iTelefoon = $user['Telefoonnr'];
-                         //$sEmail = $user['Email'];
-                         $sGeslacht = $user['Geslacht'];
-                     }
-                    ?>
-                    <tr>
-                        <td class="text-left">ID</td>
-                        <td class="text-left"><?php echo $sUserId ?></td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Voornaam</td>
-                        <td class="text-left"><?php echo $sVoornaam?></td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Achternaam</td>
-                        <td class="text-left"><?php echo $sAchternaam?></td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">GSM</td>
-                        <td class="text-left"><?php echo $iTelefoon?></td>
-                    </tr>
-                    <tr>
-                        <td class="text-left">Geslacht</td>
-                        <td class="text-left"><?php echo $sGeslacht?></td>
-                    </tr>
-                    <tr>    
-                        <td><a href="<?php echo base_url()."index.php/profieluserupdaten?id=".$sUserId;?>" class="btn btn-info" onclick="return confirm('Are you sure you want to EDIT?')">Edit</a></td>
-                    </tr>
-                </tbody>
-            </table>
-                 
+            
         </div>
         <!-- /#page-wrapper -->
 

@@ -25,4 +25,21 @@ class profieluser_model extends CI_Model
         //stuurt query uit als array
         return $query->result_array();
     }
+    
+    function update_klant($id,$data){
+        $id=$_GET['id'];
+        $this->db->where('id_user',$id);
+        
+        return $this->db->update('tblklant',$data);
+    }
+    
+//    public function getEmail(){
+//        $data = $this->session->userdata('usersessie');
+//        $this->db->select('user_email');
+//        $this->db->from('login');
+//        $this->db->where('id_user ='.$data['id_user']);
+//        $query = $this->db->get()->row()->user_email;
+//        
+//        return $query;
+//    }
 }

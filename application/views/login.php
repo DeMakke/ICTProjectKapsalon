@@ -155,105 +155,6 @@
         </div>
     </section>
 
-
-    <!-- Portfolio Grid Section -->
-   <!-- <section id="portfolio" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/roundicons.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Round Icons</h4>
-                        <p class="text-muted">Graphic Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/startup-framework.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Startup Framework</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/treehouse.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Treehouse</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/golden.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Golden</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/escape.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Escape</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/dreams.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Dreams</h4>
-                        <p class="text-muted">Website Design</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>-->
-
     <!-- About Section -->
     <section id="about">
         <div class="container">
@@ -279,7 +180,7 @@
                                 Vrijdag: 09:00 - 19:00 </br>
                                 Zaterdag: 09:00 - 19:00 </br>
                                 Zondag: 09:00 - 12:00 </br>
-                            </p>
+                            </p><br/>
                         </div>
                     </div>
                 </div>
@@ -288,30 +189,61 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <div>
-                        <div class="col-lg-12 text-center">
-                            <h4 class="subheading">Locatie</h4>
-                        </div>
-                        <div class="col-lg-12">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4210.409207094644!2d5.5247131139754835!3d51.13568212715043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1snl!2sbe!4v1461313119475" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                                        
-                </div>
-                <div class="col-md-6">
-                    <div>
-                        <div class="col-lg-12 text-center">
-                                <h4 class="subheading">Voorgevel</h4>
-                        </div>
-                        <div class="col-lg-12">
-                            <img src="<?php echo base_url(); ?>/assets/img/about/KapsalonFront.jpg" alt="" height="450" width="600">
-                        </div>
-                    </div>
-                </div>
-            </div>
+                <div class="col-lg-12">
+                        <table class="tablefancy" align="center"><hr/>
+                            <tr>
+                                <td>
+                                    <h4 class="subheading">Onze Locatie</h4>
+                                </td> 
+                            </tr>
+                            <tr>
+                                <td>
+                                    <script src="http://maps.googleapis.com/maps/api/js"></script>
+                                    <script>
+                                        var myCenter=new google.maps.LatLng(50.929040, 5.395317);
+                                        var marker;
+
+                                        function initialize()
+                                        {
+                                            var mapProp = {
+                                              center:myCenter,
+                                              zoom:13,
+                                              mapTypeId:google.maps.MapTypeId.ROADMAP
+                                            };
+
+                                            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+                                            var marker=new google.maps.Marker({
+                                              position:myCenter,
+                                              animation:google.maps.Animation.BOUNCE
+                                            });
+                                            
+                                            var infowindow = new google.maps.InfoWindow({
+                                              content:"Ons Kapsalon!"
+                                            });
+
+                                            infowindow.open(map,marker);
+                                            marker.setMap(map);
+                                        }
+
+                                        google.maps.event.addDomListener(window, 'load', initialize);
+                                    </script>
+                                    <div id="googleMap" style="width:650px;height:450px;"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <br/><h4 class="subheading">Onze Voorgevel</h4>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="<?php echo base_url(); ?>/assets/img/about/2.jpg"/>
+                                </td>
+                            </tr>
+                        </table>    
+                </div>   
+            </div> 
         </div>
     </section>
 

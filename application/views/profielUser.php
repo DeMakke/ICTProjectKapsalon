@@ -107,8 +107,16 @@
                 </thead>
                 <tbody class="table-hover">
                     <tr>
-                        <td><p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.kanakkan.com/images/14588894232049024503dummy_profpic.jpg" width="150"height="150" alt="Dummy"/></p></td>
-                        <td><br/><p>&nbsp;&nbsp;&nbsp;&nbsp;<!--Gegevens: <?php $data = $this->session->userdata('usersessie'); echo $data['username']; ?>--></p></td>
+                        <td><p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="<?php echo base_url(); ?>/uploads/<?php $data = $this->session->userdata('usersessie'); echo $data['username'] ?>.png" width="150"height="150" alt="Upload je Foto!"/></p></td>
+                        <td>
+                            <?php echo form_open_multipart('uploadfile/upload');?>
+                            <input type="file" name="filename" size="20" />
+                            <span class="text-danger">
+                            <?php if (isset($error)) { echo $error; } ?></span>
+                            <input type="submit" value="Upload File" class="btn btn-primary"/>
+                            <?php echo form_close(); ?>
+                            <u><p style="font-size: 13px;">Enkel .PNG bestand</p></u>
+                        </td>
                     </tr>
                     <?php 
                      foreach ($users as $user) {

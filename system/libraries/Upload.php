@@ -53,21 +53,21 @@ class CI_Upload {
 	 *
 	 * @var	int
 	 */
-	public $max_size = 0;
+	public $max_size = 100;
 
 	/**
 	 * Maximum image width
 	 *
 	 * @var	int
 	 */
-	public $max_width = 0;
+	public $max_width = 1024;
 
 	/**
 	 * Maximum image height
 	 *
 	 * @var	int
 	 */
-	public $max_height = 0;
+	public $max_height = 768;
 
 	/**
 	 * Minimum image width
@@ -102,7 +102,7 @@ class CI_Upload {
 	 *
 	 * @var	string
 	 */
-	public $allowed_types = '';
+	public $allowed_types = 'gif|jpg|png';
 
 	/**
 	 * Temporary filename
@@ -158,7 +158,7 @@ class CI_Upload {
 	 *
 	 * @var	string
 	 */
-	public $upload_path = '';
+	public $upload_path = './uploads/';
 
 	/**
 	 * Overwrite flag
@@ -662,6 +662,7 @@ class CI_Upload {
 		}
 
 		$filename = str_replace($this->file_ext, '', $filename);
+                
 
 		$new_filename = '';
 		for ($i = 1; $i < $this->max_filename_increment; $i++)

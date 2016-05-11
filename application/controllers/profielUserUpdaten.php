@@ -5,7 +5,7 @@
  * @author Niels Bekkers
  */
 
-class profieluserupdaten extends CI_Controller{
+class profielUserUpdaten extends CI_Controller{
     function __construct() {
         parent::__construct();
         
@@ -25,18 +25,18 @@ class profieluserupdaten extends CI_Controller{
     }
     public function index(){
         
-     $this->klantToevoegen();  
+     $this->klantUpdaten();  
        
      
     }
     
-    function klantToevoegen()
+    /**
+     * functie voor editteren van klantgegevens
+     */
+    function klantUpdaten()
     {
         $data3 = $this->session->userdata('usersessie');
         $id = $data3['id_user'];
-        //$id = $this->uri->segment(3);
-        //$personeel['query'] = $this->personeel_model->get_all($id)->result();
-        //validatie regels
         $this->form_validation->set_rules('surname', 'Voornaam','trim|required');
         $this->form_validation->set_rules('name', 'Achternaam','trim|required');
         $this->form_validation->set_rules('phone', 'Telefoonnr','trim|required');

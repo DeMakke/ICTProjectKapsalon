@@ -13,10 +13,16 @@ class user_model extends CI_Model
         parent::__construct();
     }
     
-    //insert in login tabel
+    /**
+     * 
+     * @param array $data
+     * @return array
+     * insert into tbl login
+     */
     function insertUser($data)
     {
         return $this->db->insert('login', $data);
+     
     }
     
 }

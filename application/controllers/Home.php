@@ -20,7 +20,10 @@ class Home extends CI_Controller
     public function index() {
         $this->load->view('home');
     }
-
+    /**
+     * functie voor uit te logen 
+     * session data wordt leeggemaakt
+     */
     public function logout() {
         $data = ['id_user', 'username'];
         $this->session->unset_userdata($data);

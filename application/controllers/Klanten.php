@@ -19,17 +19,23 @@ class Klanten extends CI_Controller{
     }
     public function index(){
         
-       $this->deleteguest();
+       $this->verwijderKlant();
     }
     
-    public function deleteguest(){
+    
+    /**
+     * functie voor een klant te verwijderen van tblklant en tbllogin
+     * haalt alle klanten uit database;
+     * als er een ID gekoppeld is, verwijder rij
+     */
+    public function verwijderKlant(){
+        
         $id = $this->uri->segment(3);
         $data['query'] = $this->klantadmin_model->get_all($id)->result();
         $this->load->view('klanten',$data);
         
         if(isset($_GET['id'])){
             $id=$_GET['id'];
-            $this->load->model('klantadmin_model');
             $this->klantadmin_model->row_delete($id);
             $this->klantadmin_model->row_delete_login($id);
             redirect('klanten');

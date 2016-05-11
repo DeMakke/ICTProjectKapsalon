@@ -117,13 +117,13 @@
                       <?php foreach($query as $row): ?>
                         <tr> 
                             
-                            <td><?php echo $row->Voornaam;?>.</td>
-                            <td><?php echo $row->Achternaam;?>.</td>
-                            <td><?php echo $row->Straat;?>.</td>
-                            <td><?php echo $row->Nr;?>.</td>
-                            <td><?php echo $row->Plaats;?>.</td>
-                            <td><?php echo $row->Geslacht;?>.</td>
-                            <td><a href="<?php echo base_url()."/index.php/PersoneelUpdaten?id=".$row->KapsterID ;?>" class="btn btn-info" onclick="return confirm('Are you sure you want to Edit?')">Edit</a></td> 
+                            <td><?php echo $row->Voornaam;?></td>
+                            <td><?php echo $row->Achternaam;?></td>
+                            <td><?php echo $row->Straat;?></td>
+                            <td><?php echo $row->Nr;?></td>
+                            <td><?php echo $row->Plaats;?></td>
+                            <td><?php echo $row->Geslacht;?></td> 
+                            <td><a href="<?php echo base_url()."/index.php/personeelUpdaten?id=".$row->KapsterID;?>" class="btn btn-info" onclick="return confirm('Are you sure you want to EDIT?')">Edit</a> </td>
                             <td><a href="<?php echo base_url()."/index.php/PersoneelVerwijderen?id=".$row->KapsterID ;?>" class="btn btn-danger" onclick="return confirm('Are you sure to Delete?')">Delete</a></td>
 
                         </tr>

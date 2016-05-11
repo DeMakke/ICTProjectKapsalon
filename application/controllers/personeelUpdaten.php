@@ -4,39 +4,7 @@
  * @name Klanten.php
  * @author Niels Bekkers
  */
-//class personeelUpdaten extends CI_Controller{
-//    function __construct() {
-//        parent::__construct();
-//        
-//        if(empty($this->session->userdata('id_user'))) {
-//            $this->session->set_flashdata('flash_data', 'You don\'t have access!');
-//            redirect('login');
-//        }
-//        
-//        $this->load->database();
-//        $this->load->model('personeel_model');
-//    }
-//    public function index(){
-//       $this->update_student_id();
-//    }
-//    
-//    public function show_student_id2(){
-//        $id = $this->uri->segment(3);
-//        $data['query'] = $this->personeel_model->get_all($id)->result();
-//        $data['Personeels'] = $this->personeel_model->show_student_id($id);
-//        $this->load->view("personeelUpdaten",$data);
-//    }
-//    
-//    public function update_student_id(){
-//        $id=$this->input->post('did');
-//        $data = array(
-//            'Voornaam' => $this->input->post('surname'),
-//        );
-//        $this->personeel_model->update_student_id1($id,$data);
-//        $this->show_student_id2();
-//    }
-//        
-//}
+
 class PersoneelUpdaten extends CI_Controller{
     function __construct() {
         parent::__construct();
@@ -52,14 +20,15 @@ class PersoneelUpdaten extends CI_Controller{
         $this->load->model('personeel_model');
     }
     public function index(){
-     $this->toevoegen();  
+     $this->editPersonel();  
      
     }
-    
-    function toevoegen()
+    /**
+     * functie voor personeel te editteren
+     */
+    function editPersonel()
     {
         $id = $this->uri->segment(3);
-        $personeel['query'] = $this->personeel_model->get_all($id)->result();
         //validatie regels
         $this->form_validation->set_rules('name', 'Voornaam','trim|required');
         $this->form_validation->set_rules('surname', 'Achternaam','trim|required');
@@ -76,7 +45,7 @@ class PersoneelUpdaten extends CI_Controller{
         //valideer formulier input
         
         if ($this->form_validation->run() == FALSE){
-            $this->load->view('personeelUpdaten',$personeel);
+            $this->load->view('personeelUpdaten');
         }
         else{
             $data = array(

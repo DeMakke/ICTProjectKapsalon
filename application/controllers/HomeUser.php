@@ -16,11 +16,15 @@ class HomeUser extends CI_Controller
             redirect('login');  
         }
     }
-
+    /**
+     * laad homepagina voor klant, gescheiden van admin
+     */
     public function index() {
         $this->load->view('homeUser');
     }
-
+    /**
+     * functie voor klant uit te loggen
+     */
     public function logout() {
         $data = ['id_user', 'username'];
         $this->session->unset_userdata('usersessie');

@@ -41,5 +41,11 @@ class personeel_model extends CI_Model
         return $this->db->update('tblpersoneel',$data);
     }
     
+    function placeholders($id)
+    {
+        $id=$_GET['id'];
+        $this->db->get_where('tblpersoneel','KapsterID ='.$id);
+    }
+    
     
 }

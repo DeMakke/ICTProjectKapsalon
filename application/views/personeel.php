@@ -115,13 +115,17 @@
                    
                      <?php foreach($query as $row): ?>
                         <tr> 
-                            <td><?php echo $row->KapsterID;?>.</td>
-                            <td><?php echo $row->Voornaam;?>.</td>
-                            <td><?php echo $row->Achternaam;?>.</td>
-                            <td><?php echo $row->Straat;?>.</td>
-                            <td><?php echo $row->Nr;?>.</td>
-                            <td><?php echo $row->Plaats;?>.</td>
-                            <td><?php echo $row->Geslacht;?>.</td>
+                            <td><?php echo $row->KapsterID;?></td>
+                            <td><?php echo $row->Voornaam;?></td>
+                            <td><?php echo $row->Achternaam;?></td>
+                            <td><?php echo $row->Email;?></td>
+                            <td><?php echo $row->Straat;?></td>
+                            <td><?php echo $row->Nr;?></td>
+                            <td><?php echo $row->Plaats;?></td>
+                            <td><?php echo $row->Postcode;?></td>
+                            <td><?php echo $row->Telefoonnr;?></td>
+                            <td><?php echo $row->Gsmnr;?></td>
+                            <td><?php echo $row->Geslacht;?></td>
                         </tr>
                      <?php endforeach; ?>
                 </tbody>

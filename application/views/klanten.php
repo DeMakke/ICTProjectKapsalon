@@ -113,16 +113,16 @@
                 <thead>
                 </thead>
                 <tbody class="table-hover">
-                   
+              <!-- Zet alle klanten in een tabel gekoppeld aan de gebruikers ID-->
                      <?php foreach($query as $row): ?>
                         <tr> 
-                            <td><?php echo $row->id_user;?>.</td>
-                            <td><?php echo $row->username;?>.</td>
-                            <td><?php echo $row->Achternaam;?>.</td>
-                            <td><?php echo $row->Voornaam;?>.</td>
-                            <td><?php echo $row->Telefoonnr;?>.</td>
-                            <td><?php echo $row->user_email;?>.</td>
-                            <td><?php echo $row->Geslacht;?>.</td>
+                            <td><?php echo $row->id_user;?></td>
+                            <td><?php echo $row->username;?></td>
+                            <td><?php echo $row->Achternaam;?></td>
+                            <td><?php echo $row->Voornaam;?></td>
+                            <td><?php echo $row->Telefoonnr;?></td>
+                            <td><?php echo $row->user_email;?></td>
+                            <td><?php echo $row->Geslacht;?></td>
                             <td><a href="<?php echo base_url()."/index.php/klanten?id=".$row->id_user ;?>" class="btn btn-danger" onclick="return confirm('Are you sure to Delete?')">Delete</a></td>
                         </tr>
                      <?php endforeach; ?>

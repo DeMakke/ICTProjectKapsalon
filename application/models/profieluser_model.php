@@ -12,7 +12,9 @@ class profieluser_model extends CI_Model
         parent::__construct();
         $this->load->database();
     }
-    
+    /*
+     * Toont gegevens van 1 rij
+     */
     public function get_all(){
         //haalt huidige userdata op van loginsessiee
         $data = $this->session->userdata('usersessie');
@@ -26,20 +28,28 @@ class profieluser_model extends CI_Model
         return $query->result_array();
     }
     
+    /**
+     * 
+     * @param int $id
+     * @param array $data
+     * @return int,array
+     * Updaten van klantgegevens
+     */
+    
     function update_klant($id,$data){
-        $id=$_GET['id'];
+        
         $this->db->where('id_user',$id);
         
         return $this->db->update('tblklant',$data);
     }
-    
-//    public function getEmail(){
-//        $data = $this->session->userdata('usersessie');
-//        $this->db->select('user_email');
-//        $this->db->from('login');
-//        $this->db->where('id_user ='.$data['id_user']);
-//        $query = $this->db->get()->row()->user_email;
-//        
-//        return $query;
-//    }
+    /**
+     * 
+     * @param array $data2
+     * @return array
+     * insert into tabel tblklant
+     */
+    function insertUserTotblklant($data2)
+    {
+        return $this->db->insert('tblklant',$data2);
+    }
 }

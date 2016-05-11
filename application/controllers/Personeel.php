@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * @name Kalender.php
+ * @name Personeel.php
  * @author Niels Bekkers
  */
 class Personeel extends CI_Controller{
@@ -17,8 +17,16 @@ class Personeel extends CI_Controller{
         $this->load->database();
         $this->load->model('personeel_model');
     }
+
     public function index(){
         
+        $this->toonPersoneel();
+    }
+    
+    /**
+     * Toont alle personeelgegevens
+     */
+    function toonPersoneel(){
         $id = $this->uri->segment(3);
         $data['query'] = $this->personeel_model->get_all($id)->result();
         $this->load->view("personeel",$data);

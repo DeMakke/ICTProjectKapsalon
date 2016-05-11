@@ -18,7 +18,6 @@ class ProfielUser extends CI_Controller{
         
         $this->load->database();
         $this->load->model('profieluser_model');
-        $this->load->model('usertotblklant_model');
     }
     public function index(){
         //stopt alle gegevens in dataUser['users']
@@ -30,12 +29,14 @@ class ProfielUser extends CI_Controller{
         }
         else
         {
-         $this->registreettotblklant();   
+         $this->registreer();   
         }
         
     }
-    
-    function registreettotblklant()
+    /**
+     * Indien gegevens leeg zijn, haalt ze op uit formulier en push naar tblklant
+     */
+    function registreer()
     {
         $data = $this->session->userdata['usersessie'];
         
@@ -67,7 +68,7 @@ class ProfielUser extends CI_Controller{
            
             
             // insert formulierdata in database
-            if ($this->usertotblklant_model->insertUserTotblklant($data2))
+            if ($this->profieluser_model->insertUserTotblklant($data2))
             {
                     //succesvol geregistreerd
                     $this->session->set_flashdata('flashSuccess','<center><br/><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Light_green_check.svg" width="30" height="30"/><h1>Proficiat! U bent succesvol geregistreerd</h1><center>');

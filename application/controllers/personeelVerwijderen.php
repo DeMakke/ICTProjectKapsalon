@@ -19,13 +19,14 @@ class personeelVerwijderen extends CI_Controller{
     }
     public function index(){
         
-        //$id = $this->uri->segment(3);
-        //$data['query'] = $this->personeel_model->get_all($id)->result();
-        $this->deleteclient();
+        $this->deletePersonel();
         
     }
     
-    public function deleteclient(){
+    /**
+     * functie voor personeel te verwijderen op basis van ID die aan deleteknop zit gekoppeld. 
+     */
+    public function deletePersonel(){
             $id = $this->uri->segment(3);
             $data['query'] = $this->personeel_model->get_all($id)->result();
             $this->load->view("personeelVerwijderen",$data);

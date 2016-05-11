@@ -20,10 +20,14 @@ class PersoneelToevoegen extends CI_Controller{
         $this->load->model('personeel_model');
     }
     public function index(){
-     $this->toevoegen();   
+     
+        $this->personeelToevoegen();   
     }
+    /**
+     * fucntie voor personeel toe te voegen aan tbl personeel
+     */
     
-    function toevoegen()
+    function personeelToevoegen()
     {
         //validatie regels
         $this->form_validation->set_rules('name', 'Voornaam','trim|required');

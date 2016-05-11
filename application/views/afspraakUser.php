@@ -103,13 +103,30 @@
             </div>
             <!-- /.container-fluid -->
             
-
+            <select multiple id="typeSelect" onchange="showSelect('persSelect')">
+                <option value="">Selecteer een behandeling:</option>
+                <?php echo $behandeling; ?>
+            </select>
+            
+            <select style="display: none;" id="persSelect" onchange="showSelect('maandSelect')">
+                <option value="">Selecteer een kapster:</option>
+                <?php echo $personeel; ?>
+            </select>
+            
+            <select style="display: none;" id="maandSelect" onchange="userChoice('this.options[this.selectedIndex].value')">
+                <option value="">Selecteer een maand:</option>
+                <?php echo $maand; ?>
+            </select>
+            
         </div>
         <!-- /#page-wrapper -->
 
     </div>
     <!-- /#wrapper -->
 
+    <!--javascript afspraak content-->
+    <script src="<?php echo base_url(); ?>/assets/js/afspraak.js"></script>
+    
     <!-- jQuery -->
     <script src="<?php echo base_url(); ?>/assets/js/jquery.js"></script>
 

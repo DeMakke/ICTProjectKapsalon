@@ -16,7 +16,7 @@
     <link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url(); ?>/assets/css/sb-admin.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>/assets/css/afspraakCSS.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
     <link href="<?php echo base_url(); ?>/assets/css/plugins/morris.css" rel="stylesheet">
@@ -102,23 +102,32 @@
 
             </div>
             <!-- /.container-fluid -->
-            
-            <select multiple id="typeSelect" onchange="showSelect('persSelect')">
-                <option value="">Selecteer een behandeling:</option>
-                <?php echo $behandeling; ?>
-            </select>
-            
-            <select style="display: none;" id="persSelect" onchange="showSelect('maandSelect')">
-                <option value="">Selecteer een kapster:</option>
-                <?php echo $personeel; ?>
-            </select>
-            
-            <select style="display: none;" id="maandSelect" onchange="userChoice('this.options[this.selectedIndex].value')">
-                <option value="">Selecteer een maand:</option>
-                <?php echo $maand; ?>
-            </select>
-            
+            <table class="tabelafspraak">
+                <tr>
+                    <td><center><h3>Selecteer een behandeling</h3></center></td>
+                    <td><center><h3>Selecteer een kapster</h3></center></td>
+                    <td><center><h3>Selecteer een maand</h3></center></td>
+                </tr>
+                <tr>
+                    <td>
+                        <center><select multiple id="typeSelect" onchange="showSelect('persSelect')">
+                            <?php echo $behandeling; ?>
+                            </select></center>
+                    </td>
+                    <td>
+                        <center><select multiple style="display: none;" id="persSelect" onchange="showSelect('maandSelect')">
+                            <?php echo $personeel; ?>
+                            </select></center>
+                    </td>
+                    <td>
+                        <center><select multiple style="display: none;" id="maandSelect" onchange="userChoice('this.options[this.selectedIndex].value')">
+                            <?php echo $maand; ?>
+                            </select></center>
+                    </td>
+                </tr>
+            </table>    
         </div>
+        
         <!-- /#page-wrapper -->
 
     </div>

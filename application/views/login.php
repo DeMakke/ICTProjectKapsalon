@@ -445,11 +445,39 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li><a href="#">Privacy Policy</a>
+                        <li><a href="#" data-toggle="modal" data-target="#myModal">Privacy Policy</a>
                         </li>
                         <li><a href="#">Terms of Use</a>
                         </li>
                     </ul>
+                     <!-- Modal -->
+                     <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+    
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h3 class="modal-title">Privacy Policy</h3>
+                                    </div>
+                                <div class="modal-body">
+                                        <p>Your privacy is important to us. To better protect your privacy we provide this notice explaining our online information practices and the choices you can make about the way your information is collected and used. To make this notice easy to find, we make it available on our homepage and at every point where personally identifiable information may be requested. </p>
+                                        <p>Please read the following carefully. If you have any questions or concerns, please send us an email at <a href="mailto:info@kapsalon.be">info@kapsalon.be</a>.</p>
+                                        <h3>Gathering and Use of Information</h3>
+                                        <p>kapsalon will never willfully disclose any personally identifiable information about our online audience to any third party without first receiving the user's permission. We do not collect personally identifiable information from our visitors other than what is supplied to us on a voluntary basis.</p>
+                                        <p>Visitors to the kapsalon Web Site may voluntarily supply certain personally identifiable information in connection with (i)contest or sweepstakes registration, (ii) subscription registration for sites or services which require subscription (such as email newsletters), (iii) requests for membership information and (iv) e-commerce transactions. In addition, personally identifiable information is voluntarily provided in connection with certain content submissions, community postings (i.e., forums or bulletin boards), comments and suggestions, or voting.</p>
+                                        <p>Some of our sites contain links to other sites whose information practices may be different than ours. Visitors should consult the other sites' privacy notices as we have no control over information that is submitted to, or collected by, these third parties.</p>
+                                        <p>kapsalon may use such information only for conducting the activities stated above, for internal marketing and promotional purposes, or, on occasion, when mailing lists are made available to other organizations. (The occasional provision of mailing lists to such organizations is the only case where such information would be provided to third parties).<br><br>For more information regarding kapsalon's policies on the handling and use of kapsalon's membership list, please see kapsalon's Membership List Policy. The extent of such use is always explained at the time a site visitor provides such information.<br><br>If the visitor does not want this information collected and used by us for the disclosed internal purposes, the visitor is given an opportunity to 'opt-out.' Our visitors need to recognize, however, that under certain circumstances, if they select to 'opt-out' they may not be eligible for certain activities for which the personally identifiable information is needed. (For example, if a contest participant elects to 'opt-out' on permitting us to collect and use their personal information, we cannot contact them if they win without using such information.)</p>
+                                        <h3>Acceptance of these kapsalon Web Site Privacy Policy Terms and Conditions</h3>
+                                        <p>By using this site, you signify your agreement to the terms and conditions of this kapsalon Web Site Privacy Policy. If you do not agree to these terms and conditions, please do not use the site. We reserve the right, at our sole discretion, to change, modify, add, or remove portions of this policy at any time.<br><br>From time to time, kapsalon may update this privacy notice. We will notify you about material changes in the way we treat personally identifiable information by placing a notice on our site. We encourage you to periodically check back and review this policy so that you always will know what information we collect, how we use it, and to whom we disclose it. Your continued use of the kapsalon Web Site following the posting of any changes to these terms shall mean that you have accepted those changes.<br><br>Should you have other questions or concerns about these privacy policies, please email us at <a href="mailto:info@kapsalon.be">info@kapsalon.be</a>.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                                </div>
+      
+                            </div>
+                    </div>
                 </div>
             </div>
         </div>

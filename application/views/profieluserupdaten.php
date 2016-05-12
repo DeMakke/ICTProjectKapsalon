@@ -102,25 +102,35 @@
             </div>
             <!-- /.container-fluid -->
             <center>
+                <?php 
+                     foreach ($users as $user) {
+                         $sUserId = $user['id_user'];
+                         $sVoornaam = $user['Voornaam'];
+                         $sAchternaam = $user['Achternaam'];
+                         $iTelefoon = $user['Telefoonnr'];
+                         $sEmail = $user['user_email'];
+                         $sGeslacht = $user['Geslacht'];
+                     }
+                    ?>
 			<div id="addprofiledata">
                             <h2>Vervolledig je profiel!</h2>
                             <!--<h1><img src="https://cdn0.iconfinder.com/data/icons/academics-linear-black/2048/Register-512.png" width="80"height="80"/>Gelieve te registreren</h1>-->
 				<form method="post">
 					<table align="center" width="40%" border="0" class="profiledata">
 						<tr>
-                                                    <td><input class="form-control" name="surname" placeholder="Voornaam" type="text" value="<?php echo set_value('surname'); ?>" required="required" /><?php echo form_error('surname'); ?></td><br/>
+                                                    <td><input class="form-control" name="surname" placeholder="Voornaam" type="text" value="<?php echo set_value('surname',@$sVoornaam); ?>" required="required" /><?php echo form_error('surname'); ?></td><br/>
                                                      
 						</tr>
 						<tr>
-							<td><input class="form-control" name="name" placeholder="Achternaam" type="text" value="<?php echo set_value('name'); ?>" required="required"/><?php echo form_error('name'); ?></td><br/>
+							<td><input class="form-control" name="name" placeholder="Achternaam" type="text" value="<?php echo set_value('name',@$sAchternaam); ?>" required="required"/><?php echo form_error('name'); ?></td><br/>
                                                         
 						</tr>
 						<tr>
-                                                    <td><input class="form-control" name="phone" placeholder="Telefoon" type="tel" value="<?php echo set_value('phone'); ?>" required="required" /><?php echo form_error('phone'); ?></td><br/>
+                                                    <td><input class="form-control" name="phone" placeholder="Telefoon" type="tel" value="<?php echo set_value('phone',@$iTelefoon); ?>" required="required" /><?php echo form_error('phone'); ?></td><br/>
                                                       
                                                 </tr>
                                                 <tr>
-                                                    <td><input class="form-control" name="gender" placeholder="Geslacht" type="text" value="<?php echo set_value('gender'); ?>" required="required"/><?php echo form_error('gender'); ?></td><br/>
+                                                    <td><input class="form-control" name="gender" placeholder="Geslacht" type="text" value="<?php echo set_value('gender',@$sGeslacht); ?>" required="required"/><?php echo form_error('gender'); ?></td><br/>
                                                    
                                                 </tr>   
 						<tr>

@@ -28,6 +28,8 @@ class PersoneelUpdaten extends CI_Controller{
      */
     function editPersonel()
     {
+        $id2=$_GET['id'];
+        $this->dataUser['users'] = $this->personeel_model->getSinglePersonel($id2);
         $id = $this->uri->segment(3);
         //validatie regels
         $this->form_validation->set_rules('name', 'Voornaam','trim|required');
@@ -45,7 +47,7 @@ class PersoneelUpdaten extends CI_Controller{
         //valideer formulier input
         
         if ($this->form_validation->run() == FALSE){
-            $this->load->view('personeelUpdaten');
+            $this->load->view('personeelUpdaten',$this->dataUser);
         }
         else{
             $data = array(

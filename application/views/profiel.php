@@ -108,7 +108,7 @@
 
             </div>
             <!-- /.container-fluid -->
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://www.kanakkan.com/images/14588894232049024503dummy_profpic.jpg" width="150"height="150" alt="Dummy"/></p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="<?php echo base_url(); ?>/assets/img/dummy.jpg" width="150"height="150" alt="Dummy"/></p>
             <br/>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;Naam: <?= $this->session->userdata('username') ?></p>
             

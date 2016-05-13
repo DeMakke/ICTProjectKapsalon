@@ -71,7 +71,7 @@
                         <a href="home"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="Personeel"><i class="fa fa-fw fa-bar-chart-o"></i> Personeel</a>
+                        <a href="Personeel"><i class="fa fa-fw fa-desktop"></i> Personeel</a>
                     </li>
                     <li>
                         <a href="Klanten"><i class="fa fa-fw fa-table"></i> Klanten</a>
@@ -114,7 +114,7 @@
                 Ga naar de tab afspraak om je afspraken te bekijken en te beheren<br/><br/>
                 Dit is het admingedeelte, hier kunnen de ingelogde klanten dus nooit opgeraken...<br/>
                 Voor hun is er een aparte zone voorzien met enkel de benodigde functies<hr/></p></center>
-            <center><img src="https://lh3.ggpht.com/MrrIHmYJmLKw1cuZV5qARUBGME0FfCuooseICmkA-WqCFuPm92spGQfILIisy_bzXsI=w170" width="150"height="150"/></center>
+            <center><img src="<?php echo base_url(); ?>/assets/img/admin.png" width="150"height="150"/></center>
 
         </div>
         <!-- /#page-wrapper -->

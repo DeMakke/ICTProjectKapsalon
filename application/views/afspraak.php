@@ -71,7 +71,7 @@
                         <a href="home"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="Personeel"><i class="fa fa-fw fa-bar-chart-o"></i> Personeel</a>
+                        <a href="Personeel"><i class="fa fa-fw fa-desktop"></i> Personeel</a>
                     </li>
                     <li>
                         <a href="Klanten"><i class="fa fa-fw fa-table"></i> Klanten</a>

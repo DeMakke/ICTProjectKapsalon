@@ -71,7 +71,7 @@
                         <a href="home"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li class="active">
-                        <a href="Personeel"><i class="fa fa-fw fa-bar-chart-o"></i> Personeel</a>
+                        <a href="Personeel"><i class="fa fa-fw fa-desktop"></i> Personeel</a>
                     </li>
                     <li>
                         <a href="Klanten"><i class="fa fa-fw fa-table"></i> Klanten</a>
@@ -132,7 +132,7 @@
             </table>
             
                 <br/>
-                <center><p id="buttons"><a href="<?php echo site_url('personeelToevoegen'); ?>"><img border="0" alt="Toevoegen" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/add_user.png" width="50" height="50"></a> &nbsp;<a href="<?php echo site_url('PersoneelVerwijderen'); ?>"><img border="0" alt="Toevoegen" src="http://www.veryicon.com/icon/ico/System/Icons8%20Metro%20Style/Users%20Remove%20user.ico" width="50" height="50"></a></p></center>
+                <center><p id="buttons"><a href="<?php echo site_url('personeelToevoegen'); ?>"><img border="0" alt="Toevoegen" src="<?php echo base_url(); ?>/assets/img/add_user.png" width="50" height="50"></a> &nbsp;<a href="<?php echo site_url('PersoneelVerwijderen'); ?>"><img border="0" alt="Toevoegen" src="<?php echo base_url(); ?>/assets/img/remove_user.ico" width="50" height="50"></a></p></center>
         </div>
         <!-- /#page-wrapper -->
 

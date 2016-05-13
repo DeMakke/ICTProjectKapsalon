@@ -131,7 +131,7 @@
                 </tbody>
             </table>
             <br/>
-            <p><a href="<?php echo site_url('personeel'); ?>"><img border="0" alt="Toevoegen" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/left_round.png" width="50" height="50"></a></p>
+            <p><a href="<?php echo site_url('personeel'); ?>"><img border="0" alt="Toevoegen" src="<?php echo base_url(); ?>/assets/img/go_back.png" width="50" height="50"></a></p>
         </div>
         <!-- /#page-wrapper -->
 

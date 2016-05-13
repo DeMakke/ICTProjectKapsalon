@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Welkom <?= $this->session->userdata('username') ?></title>
+    <title>Welkom <?php $data = $this->session->userdata('usersessie'); echo $data['username'] ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -105,8 +105,9 @@
             
             <center><p><h4>Welkom op je persoonlijk dashboard <u><?php $data = $this->session->userdata('usersessie'); echo $data['username'] ?></u>, hier kan je reservaties maken/bekijken</h4><br/>
                 Ga naar de tab afspraak om je afspraken te bekijken en te beheren<br/>
-                Hier kan je dus ook een nieuwe afspraak maken met je persoonlijke wensen<br/><hr/></p></center>
-            <center><img src="https://d13yacurqjgara.cloudfront.net/users/113259/screenshots/1188527/settings_big_1x.png" width="150"height="100"/></center>
+                Hier kan je dus ook een nieuwe afspraak maken met je persoonlijke wensen<br/>
+                Navigeer je naar je profiel, dan kan je daar meer gegevens invullen over jezelf om ons systeem optimaal te kunnen benutten<br/><hr/></p></center>
+            <center><img src="<?php echo base_url(); ?>/assets/img/profielUser.png" width="150"height="110"/></center>
 
         </div>
         <!-- /#page-wrapper -->

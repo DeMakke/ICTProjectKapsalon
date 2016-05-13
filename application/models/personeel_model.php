@@ -33,7 +33,17 @@ class personeel_model extends CI_Model
         $this->db->delete('tblpersoneel');
     }
     
-    
+    function getSinglePersonel($id){
+        
+        $this->db->select('*');
+        $this->db->from('tblpersoneel');
+        //vergelijkt de id van de ingelogde gebruiker met deze van de database
+        $this->db->where('KapsterID ='.$id);
+        //haalt gegevens op
+        $query = $this->db->get();
+        //stuurt query uit als array
+        return $query->result_array();
+    }
     //update functie
     function update_personel($id,$data){
         $id=$_GET['id'];

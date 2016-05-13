@@ -25,7 +25,7 @@ class profielUserUpdaten extends CI_Controller{
     }
     public function index(){
         
-     $this->klantUpdaten();  
+        $this->klantUpdaten();  
        
      
     }
@@ -35,6 +35,7 @@ class profielUserUpdaten extends CI_Controller{
      */
     function klantUpdaten()
     {
+        $this->dataUser['users'] = $this->profieluser_model->get_all();
         $data3 = $this->session->userdata('usersessie');
         $id = $data3['id_user'];
         $this->form_validation->set_rules('surname', 'Voornaam','trim|required');
@@ -47,7 +48,7 @@ class profielUserUpdaten extends CI_Controller{
         if ($this->form_validation->run() == FALSE)
         {
             // error
-            $this->load->view('profieluserupdaten');
+            $this->load->view('profieluserupdaten',$this->dataUser);
         }
         else
         {

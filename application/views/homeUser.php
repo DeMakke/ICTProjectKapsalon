@@ -107,7 +107,9 @@
                 Ga naar de tab afspraak om je afspraken te bekijken en te beheren<br/>
                 Hier kan je dus ook een nieuwe afspraak maken met je persoonlijke wensen<br/>
                 Navigeer je naar je profiel, dan kan je daar meer gegevens invullen over jezelf om ons systeem optimaal te kunnen benutten<br/><hr/></p></center>
-            <center><img src="<?php echo base_url(); ?>/assets/img/profielUser.png" width="150"height="110"/></center>
+            <center><a href="<?php echo base_url(); ?>index.php/ProfielUser">Klik op onderstaande link om je profiel te vervolledigen</p></center>
+            <center><img src="<?php echo base_url(); ?>/assets/img/profielUser.png" width="150"height="110"/></a></center>
+            
 
         </div>
         <!-- /#page-wrapper -->

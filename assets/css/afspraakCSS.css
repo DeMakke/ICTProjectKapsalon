@@ -228,6 +228,10 @@ ul.alert-dropdown {
     color: #df8a13;
 }
 
+.placeholder {
+    display: none;
+}
+
 .tabelafspraak{
     border: none;
     width:98%;

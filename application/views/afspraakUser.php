@@ -102,30 +102,66 @@
 
             </div>
             <!-- /.container-fluid -->
+            <form method="post" action="">
             <table class="tabelafspraak">
                 <tr>
                     <td><center><h3>Selecteer een behandeling</h3></center></td>
-                    <td><center><h3>Selecteer een kapster</h3></center></td>
-                    <td><center><h3>Selecteer een maand</h3></center></td>
+                    <td><center><h3 id="persSelectTitel" style="display: none;">Selecteer een kapster</h3></center></td>
+                    <!--<td><center><h3 id="maandSelectTitel" style="display: none;">Selecteer een maand</h3></center></td>-->
+                    <td><center><h3 id="dagSelectTitel" style="display: none;">Selecteer een dag</h3></center></td>
                 </tr>
                 <tr>
                     <td>
-                        <center><select multiple id="typeSelect" onchange="showSelect('persSelect')">
-                            <?php echo $behandeling; ?>
-                            </select></center>
+                        <center>
+                            <select multiple id="typeSelect" name="typeSelect" onchange="showSelect('persSelect')">
+                            <?php foreach($behandelingen as $behandeling): ?>
+                        
+                                <option value= "<?php echo $behandeling->BehandelingID;?>"><?php echo $behandeling->Type;?></option>
+                                                  
+                            <?php endforeach; ?>
+                                </select>
+                        </center>
                     </td>
                     <td>
-                        <center><select multiple style="display: none;" id="persSelect" onchange="showSelect('maandSelect')">
-                            <?php echo $personeel; ?>
-                            </select></center>
+                        <center>
+                            <select style="display: none;" name="persSelect" id="persSelect" onchange="showSelect('dagSelect')">
+                                <option class="placeholder" selected disabled value="">Kies een kapster</option>
+                            <?php foreach($personeel as $personel): ?>
+                        
+                                <option value='<?php echo $personel->KapsterID;?>'><?php echo $personel->Voornaam;?></option>
+                                                  
+                            <?php endforeach; ?>
+                            </select>
+                        </center>
                     </td>
                     <td>
-                        <center><select multiple style="display: none;" id="maandSelect" onchange="userChoice('this.options[this.selectedIndex].value')">
-                            <?php echo $maand; ?>
-                            </select></center>
+                        <center>
+                            <select style="display: none;" name="dagSelect" id="dagSelect" onchange="showSelect('uurSelect')">
+                                <option class="placeholder" selected disabled value="">Kies een dag</option>
+                                <?php
+                                $weekbegin = strtotime("Today");
+                                
+                                $dagen = array(
+                                    '0'=>$weekbegin,
+                                    '1'=>strtotime("+1 day",$weekbegin),
+                                    '2'=>strtotime("+2 day",$weekbegin),
+                                    '3'=>strtotime("+3 day",$weekbegin),
+                                    '4'=>strtotime("+4 day",$weekbegin),
+                                    '5'=>strtotime("+5 day",$weekbegin),
+                                    '6'=>strtotime("+6 day",$weekbegin),
+                                );
+                                
+                                foreach($dagen as $index => $dag):?>
+                                    <option value="<?php printf($index);?>"><?php printf(date("l",$dag));?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </center>
                     </td>
+                   
+                    <td><button type="submit" name="btn-afspraak" class="button" value="afpraak">Afspraak maken</button></td>
                 </tr>
-            </table>    
+            </table>
+            </form>
         </div>
         
         <!-- /#page-wrapper -->

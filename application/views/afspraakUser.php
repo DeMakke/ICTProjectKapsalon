@@ -109,11 +109,12 @@
                     <td><center><h3 id="persSelectTitel" style="display: none;">Selecteer een kapster</h3></center></td>
                     <!--<td><center><h3 id="maandSelectTitel" style="display: none;">Selecteer een maand</h3></center></td>-->
                     <td><center><h3 id="dagSelectTitel" style="display: none;">Selecteer een dag</h3></center></td>
+                    <td><center><h3 id="uurSelectTitel" style="display: none;">Selecteer een uur</h3></center></td>
                 </tr>
                 <tr>
                     <td>
                         <center>
-                            <select multiple id="typeSelect" name="typeSelect" onchange="showSelect('persSelect')">
+                            <select id="typeSelect" name="typeSelect" onchange="showSelect('persSelect')" required>
                             <?php foreach($behandelingen as $behandeling): ?>
                         
                                 <option value= "<?php echo $behandeling->BehandelingID;?>"><?php echo $behandeling->Type;?></option>
@@ -124,7 +125,7 @@
                     </td>
                     <td>
                         <center>
-                            <select style="display: none;" name="persSelect" id="persSelect" onchange="showSelect('dagSelect')">
+                            <select style="display: none;" name="persSelect" id="persSelect" onchange="showSelect('dagSelect')" required>
                                 <option class="placeholder" selected disabled value="">Kies een kapster</option>
                             <?php foreach($personeel as $personel): ?>
                         
@@ -136,7 +137,7 @@
                     </td>
                     <td>
                         <center>
-                            <select style="display: none;" name="dagSelect" id="dagSelect" onchange="showSelect('tijdSelect')">
+                            <select style="display: none;" name="dagSelect" id="dagSelect" onchange="showSelect('uurSelect')" required>
                                 <option class="placeholder" selected disabled value="">Kies een dag</option>
                                 <?php
                                 $weekbegin = strtotime("Tomorrow");
@@ -153,7 +154,7 @@
                                 
                                 foreach($dagen as $index => $dag):
                                     if ((date("w",$dag)) != 1 && (date("w",$dag)) != 2) { //maandag en dinsdag -> niet open ?> 
-                                        <option value="<?php printf($index);?>"><?php printf(date("l",$dag));?></option>
+                                        <option value="<?php printf($index);?>"><?php echo date("l",$dag);?></option>
                                     <?php
                                     };  
                                 endforeach; ?>
@@ -162,7 +163,7 @@
                     </td>
                     <td>
                         <center>
-                            <select style="display: none;" name="tijdSelect" id="tijdSelect">
+                            <select style="display: none;" name="uurSelect" id="uurSelect" required>
                                 <option class="placeholder" selected disabled value="">Kies een tijdstip</option>
                             <?php 
                             $dagbegin = strtotime("8:00");
@@ -176,7 +177,7 @@
                             }
                             
                             foreach($uren as $index => $uur):?>
-                                <option value="<?php printf($index);?>"><?php printf(date("H:i",$uur));?></option>
+                                <option value="<?php printf($index);?>"><?php echo date("H:i",$uur);?></option>
                             <?php endforeach; ?>
                             </select>
                         </center>

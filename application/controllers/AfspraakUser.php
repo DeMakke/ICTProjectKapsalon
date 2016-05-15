@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 /**
  * @name AfspraakUser.php
  * @author Niels Bekkers
@@ -12,7 +13,7 @@ class AfspraakUser extends CI_Controller{
         
         if(empty($this->session->userdata('usersessie','id_user'))) {
             $this->session->set_flashdata('flash_data', 'You don\'t have access!');
-            redirect('login');
+        
         }
         $this->load->database();
         $this->load->model('afspraakUser_model');
@@ -27,43 +28,31 @@ class AfspraakUser extends CI_Controller{
         $data['personeel'] = $this->personeel_model->get_all($id)->result();
         
         if (isset($_POST['btn-afspraak'])){
+            
+            $dag = $_POST['dagSelect'];
+            $uur = $_POST['tijdSelect'];
+        
+            $dateArray = getdate($uur);  
+            $dateArray['hours'];
+            $dateArray['minutes'];  
+        
+            $tijdstip = date("Y-m-d H:i:s",mktime($dateArray['hours'],$dateArray['minutes'], 0, 0,$dag));
+            
             $afspraak = array(
             'BehandelingID' => $_POST['typeSelect'],
             'KapsterID' => $_POST['persSelect'],
-            'id_user' => $this->session->userdata('usersessie')['id_user']
+            'id_user' => $this->session->userdata('usersessie')['id_user'],
+            'Tijd' => $tijdstip,
             );
             $this->afspraakUser_model->insertAfspraak($afspraak);
-            redirect('profielUser');
+            redirect('homeUser');
         }else{
             $this->load->view('afspraakUser',$data);
         }
         
     }
     
-    public function berekenTijd(){
-        
-        $dag = $_POST['dagSelect'];
-        
-    }
+
     
-    
-//    public function toevoegen($data){
-//        $toevoegen = array(
-//                'Type' => $data['behandeling'],
-//                'Voornaam' => $data['personeel'],
-//                //'tijd' => $this->input->post('tijdSelect'),
-//            );
-//        
-//        if ($this->afspraakUser_model->insertAfspraak($toevoegen)) {
-//                $this->session->set_flashdata('flashSuccess','<center><br/><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Light_green_check.svg" width="30" height="30"/><h1>Uw afspraak is aangemaakt!</h1><center>');
-//                    header('Refresh: 5; URL=');
-//                    redirect('afspraakUser');
-//            }
-//            else
-//            {
-//                 //error
-//               $this->session->set_flashdata('Oops! er is iets misgegaan, probeer nogmaals!');
-//                redirect('');
-//            }
-//    }
+
 }

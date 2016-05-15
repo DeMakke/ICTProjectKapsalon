@@ -136,10 +136,10 @@
                     </td>
                     <td>
                         <center>
-                            <select style="display: none;" name="dagSelect" id="dagSelect" onchange="showSelect('uurSelect')">
+                            <select style="display: none;" name="dagSelect" id="dagSelect" onchange="showSelect('tijdSelect')">
                                 <option class="placeholder" selected disabled value="">Kies een dag</option>
                                 <?php
-                                $weekbegin = strtotime("Today");
+                                $weekbegin = strtotime("Tomorrow");
                                 
                                 $dagen = array(
                                     '0'=>$weekbegin,
@@ -151,17 +151,40 @@
                                     '6'=>strtotime("+6 day",$weekbegin),
                                 );
                                 
-                                foreach($dagen as $index => $dag):?>
-                                    <option value="<?php printf($index);?>"><?php printf(date("l",$dag));?></option>
-                                <?php endforeach; ?>
+                                foreach($dagen as $index => $dag):
+                                    if ((date("w",$dag)) != 1 && (date("w",$dag)) != 2) { //maandag en dinsdag -> niet open ?> 
+                                        <option value="<?php printf($index);?>"><?php printf(date("l",$dag));?></option>
+                                    <?php
+                                    };  
+                                endforeach; ?>
                             </select>
                         </center>
                     </td>
-                   
+                    <td>
+                        <center>
+                            <select style="display: none;" name="tijdSelect" id="tijdSelect">
+                                <option class="placeholder" selected disabled value="">Kies een tijdstip</option>
+                            <?php 
+                            $dagbegin = strtotime("8:00");
+                                
+                            $uren = array();
+                            $i = 0;
+                            while ($dagbegin < strtotime("19:00")){
+                                $uren[$i] = $dagbegin;
+                                $dagbegin = strtotime("+30 minutes",$dagbegin);
+                                $i++;
+                            }
+                            
+                            foreach($uren as $index => $uur):?>
+                                <option value="<?php printf($index);?>"><?php printf(date("H:i",$uur));?></option>
+                            <?php endforeach; ?>
+                            </select>
+                        </center>
+                    </td>
                     <td><button type="submit" name="btn-afspraak" class="button" value="afpraak">Afspraak maken</button></td>
                 </tr>
             </table>
-            </form>
+            </form>   
         </div>
         
         <!-- /#page-wrapper -->

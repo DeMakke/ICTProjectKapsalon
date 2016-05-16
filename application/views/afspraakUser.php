@@ -185,7 +185,29 @@
                     <td><button type="submit" name="btn-afspraak" class="button" value="afpraak">Afspraak maken</button></td>
                 </tr>
             </table>
-            </form>   
+            </form>
+            
+            <table class="tabelafspraak">
+                <tr>
+                    <td><center><h3>Tijd</h3></center></td>
+                    <td><center><h3>Klant</h3></center></td>
+                    <td><center><h3>Behandeling</h3></center></td>
+                    <td><center><h3>Kapster</h3></center></td>
+                </tr>
+                <?php 
+                
+                $j = 0;
+                //while($j < $aantal): ?>
+                <tr>
+                    <td><center><?php //echo $afspraakTijd; ?></center></td>
+                    <td><center><?php //echo $afspraakKlant; ?></center></td>
+                    <td><center><?php //echo $afspraakBehandeling; ?></center></td>
+                    <td><center><?php //echo $afspraakKapster; ?></center></td>
+                </tr>
+                <?php 
+                $j++;
+                //endwhile; ?>
+            </table>
         </div>
         
         <!-- /#page-wrapper -->

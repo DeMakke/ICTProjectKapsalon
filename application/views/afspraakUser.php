@@ -143,13 +143,13 @@
                                 $weekbegin = strtotime("Tomorrow");
                                 
                                 $dagen = array(
-                                    '0'=>$weekbegin,
-                                    '1'=>strtotime("+1 day",$weekbegin),
-                                    '2'=>strtotime("+2 day",$weekbegin),
-                                    '3'=>strtotime("+3 day",$weekbegin),
-                                    '4'=>strtotime("+4 day",$weekbegin),
-                                    '5'=>strtotime("+5 day",$weekbegin),
-                                    '6'=>strtotime("+6 day",$weekbegin),
+                                    1=>$weekbegin,
+                                    2=>strtotime("+1 day",$weekbegin),
+                                    3=>strtotime("+2 day",$weekbegin),
+                                    4=>strtotime("+3 day",$weekbegin),
+                                    5=>strtotime("+4 day",$weekbegin),
+                                    6=>strtotime("+5 day",$weekbegin),
+                                    7=>strtotime("+6 day",$weekbegin),
                                 );
                                 
                                 foreach($dagen as $index => $dag):
@@ -177,7 +177,7 @@
                             }
                             
                             foreach($uren as $index => $uur):?>
-                                <option value="<?php printf($index);?>"><?php echo date("H:i",$uur);?></option>
+                                <option value="<?php echo date("H:i",$uur);?>"><?php echo date("H:i",$uur);?></option>
                             <?php endforeach; ?>
                             </select>
                         </center>

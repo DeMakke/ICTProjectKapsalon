@@ -40,18 +40,23 @@ class AfspraakUser extends CI_Controller{
             
             $dag = $_POST['dagSelect'];
             $uur = $_POST['uurSelect'];
-        
-            $dateArray = explode(":",$uur); //uur en minuten opsplitsen
             
-            $tijdstip = mktime(intval($dateArray['0']),intval($dateArray['1']), 0, 0,intval($dag));
-            //$tijdstip = mktime(11, 14, 54, 8, 12, 2014); //dit is een test om de werking van de tijd te tonen
+            //uur en minuten converteren voor mysql
+            $dateArray = explode(":",$uur); //uur en minuten opsplitsen
+            $tijd = mktime($dateArray['0'], $dateArray['1'],0,0);
+            
+            //weekdag naar datum converteren voor mysql
+            $huidigeDag = date('j');
+            $dagBerekening = $dag + intval($huidigeDag);
+            $datum = mktime(0,0,0,0,$dagBerekening);
             
             $afspraak = array(
             'BehandelingID' => $_POST['typeSelect'],
             'KapsterID' => $_POST['persSelect'],
             //'id_user' => $id, -> variabele bovenaan index() omdat id nu ook in model gebruikt zal worden
             'id_user' => $this->session->userdata('usersessie')['id_user'],
-            'Tijd' => date("Y-m-d H:i:s",$tijdstip),
+            'Tijd' => date("H:i:s",$tijd),
+            'AfspraakDag' => date("Y-m-d",$datum),
             );
             $this->afspraak_model->insertAfspraak($afspraak);
             redirect('afspraakUser');

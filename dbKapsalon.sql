@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.4.14
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Gegenereerd op: 15 mei 2016 om 09:29
--- Serverversie: 10.1.13-MariaDB
--- PHP-versie: 7.0.5
+-- Host: localhost
+-- Gegenereerd op: 17 mei 2016 om 12:12
+-- Serverversie: 5.6.26
+-- PHP-versie: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dbkapsalon`
+-- Database: `dbKapsalon`
 --
 
 -- --------------------------------------------------------
@@ -26,19 +26,20 @@ SET time_zone = "+00:00";
 -- Tabelstructuur voor tabel `login`
 --
 
-CREATE TABLE `login` (
+CREATE TABLE IF NOT EXISTS `login` (
   `id_user` int(5) NOT NULL,
   `username` varchar(25) NOT NULL,
   `user_email` varchar(35) NOT NULL,
   `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `login`
 --
 
 INSERT INTO `login` (`id_user`, `username`, `user_email`, `password`) VALUES
-(1, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3');
+(1, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3'),
+(2, 'nielsbekkers', 'niels.bekkers@skynet.be', '9b9824df65f716b71db9f51299346088');
 
 -- --------------------------------------------------------
 
@@ -46,13 +47,29 @@ INSERT INTO `login` (`id_user`, `username`, `user_email`, `password`) VALUES
 -- Tabelstructuur voor tabel `tblafspraak`
 --
 
-CREATE TABLE `tblafspraak` (
+CREATE TABLE IF NOT EXISTS `tblafspraak` (
   `AfspraakID` int(5) NOT NULL,
   `id_user` int(5) NOT NULL,
   `KapsterID` int(5) NOT NULL,
-  `Tijd` date NOT NULL,
+  `Tijd` time NOT NULL,
+  `AfspraakDag` date NOT NULL,
   `BehandelingID` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `tblafspraak`
+--
+
+INSERT INTO `tblafspraak` (`AfspraakID`, `id_user`, `KapsterID`, `Tijd`, `AfspraakDag`, `BehandelingID`) VALUES
+(4, 2, 1, '00:00:00', '0000-00-00', 2),
+(5, 2, 1, '00:00:00', '0000-00-00', 3),
+(6, 2, 1, '00:00:00', '0000-00-00', 2),
+(7, 2, 1, '00:00:00', '0000-00-00', 3),
+(8, 2, 1, '00:00:00', '0000-00-00', 2),
+(9, 2, 1, '00:00:00', '0000-00-00', 1),
+(10, 2, 1, '13:00:00', '0000-00-00', 1),
+(11, 2, 1, '21:00:00', '0000-00-00', 2),
+(12, 2, 1, '00:01:51', '2015-11-30', 2);
 
 -- --------------------------------------------------------
 
@@ -60,12 +77,12 @@ CREATE TABLE `tblafspraak` (
 -- Tabelstructuur voor tabel `tblbehandeling`
 --
 
-CREATE TABLE `tblbehandeling` (
+CREATE TABLE IF NOT EXISTS `tblbehandeling` (
   `BehandelingID` int(5) NOT NULL,
   `Type` text NOT NULL,
   `Tijd` time NOT NULL,
   `Prijs` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `tblbehandeling`
@@ -82,7 +99,7 @@ INSERT INTO `tblbehandeling` (`BehandelingID`, `Type`, `Tijd`, `Prijs`) VALUES
 -- Tabelstructuur voor tabel `tblklant`
 --
 
-CREATE TABLE `tblklant` (
+CREATE TABLE IF NOT EXISTS `tblklant` (
   `id_user` int(5) NOT NULL,
   `username` varchar(30) NOT NULL,
   `Achternaam` text NOT NULL,
@@ -90,7 +107,14 @@ CREATE TABLE `tblklant` (
   `Telefoonnr` int(9) NOT NULL,
   `user_email` varchar(35) NOT NULL,
   `Geslacht` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `tblklant`
+--
+
+INSERT INTO `tblklant` (`id_user`, `username`, `Achternaam`, `Voornaam`, `Telefoonnr`, `user_email`, `Geslacht`) VALUES
+(2, 'nielsbekkers', 'Bekkers', 'Niels', 47596748, 'niels.bekkers@skynet.be', 'Man');
 
 -- --------------------------------------------------------
 
@@ -98,7 +122,7 @@ CREATE TABLE `tblklant` (
 -- Tabelstructuur voor tabel `tblpersoneel`
 --
 
-CREATE TABLE `tblpersoneel` (
+CREATE TABLE IF NOT EXISTS `tblpersoneel` (
   `KapsterID` int(5) NOT NULL,
   `Voornaam` text NOT NULL,
   `Achternaam` text NOT NULL,
@@ -111,7 +135,7 @@ CREATE TABLE `tblpersoneel` (
   `Email` text NOT NULL,
   `Geboortedatum` date NOT NULL,
   `Geslacht` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `tblpersoneel`
@@ -168,27 +192,27 @@ ALTER TABLE `tblpersoneel`
 -- AUTO_INCREMENT voor een tabel `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT voor een tabel `tblafspraak`
 --
 ALTER TABLE `tblafspraak`
-  MODIFY `AfspraakID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `AfspraakID` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT voor een tabel `tblbehandeling`
 --
 ALTER TABLE `tblbehandeling`
-  MODIFY `BehandelingID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `BehandelingID` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT voor een tabel `tblklant`
 --
 ALTER TABLE `tblklant`
-  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT voor een tabel `tblpersoneel`
 --
 ALTER TABLE `tblpersoneel`
-  MODIFY `KapsterID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `KapsterID` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- Beperkingen voor geëxporteerde tabellen
 --

@@ -109,68 +109,52 @@
             </div>
             <!-- /.container-fluid -->
            
-                               <?php 
-                     foreach ($users as $user) {
-                         
-                         $sVoornaam = $user['Voornaam'];
-                         $sAchternaam = $user['Achternaam'];
-                         $sStraat = $user['Straat'];
-                         $iNr = $user['Nr'];
-                         $sPlaats = $user['Plaats'];
-                         $iPostcode = $user['Postcode'];
-                         $nTelefoon = $user['Telefoonnr'];
-                         $nGsm = $user['Gsmnr'];
-                         $sEmail = $user['Email'];
-                         $dGeboortedatum = $user['Geboortedatum'];
-                         $sGeslacht = $user['Geslacht'];
-                         
-                     }
-                    ?>
+            <?php foreach ($users as $user): {}?>
                             <center><h2>Update hieronder je personeel!</h2></center>
                             <form method="post">
 					<table align="center" id="personeeltoevoegen">
 						<tr>
-							<td><input class="form-control" name="surname" placeholder="Voornaam" type="text" value="<?php echo set_value('surname',@$sVoornaam); ?>" /><?php echo form_error('surname'); ?></td><br/>
+							<td><input class="form-control" name="surname" placeholder="Voornaam" type="text" value="<?php echo set_value('surname',@$user['Voornaam']); ?>" /><?php echo form_error('surname'); ?></td><br/>
                                                         
 						</tr>
                                                 <tr>
-							<td><input class="form-control" name="name" placeholder="Achternaam" type="text" value="<?php echo set_value('name',@$sAchternaam); ?>" /><?php echo form_error('name'); ?></td><br/>
+							<td><input class="form-control" name="name" placeholder="Achternaam" type="text" value="<?php echo set_value('name',@$user['Achternaam']); ?>" /><?php echo form_error('name'); ?></td><br/>
                                                         
 						</tr>
                                                 <tr>
-							<td><input class="form-control" name="street" placeholder="Straat" type="text" value="<?php echo set_value('street',@$sStraat); ?>" /><?php echo form_error('street'); ?></td><br/>
+							<td><input class="form-control" name="street" placeholder="Straat" type="text" value="<?php echo set_value('street',@$user['Straat']); ?>" /><?php echo form_error('street'); ?></td><br/>
                                                         
 						</tr>
                                                 <tr>
-                                                    <td><input class="form-control" name="nr" placeholder="Nr" type="number" value="<?php echo set_value('nr',@$iNr); ?>" /><?php echo form_error('nr'); ?></td><br/>
+                                                    <td><input class="form-control" name="nr" placeholder="Nr" type="number" value="<?php echo set_value('nr',@$user['Nr']); ?>" /><?php echo form_error('nr'); ?></td><br/>
                                                         
 						</tr>
                                                 <tr>
-							<td><input class="form-control" name="city" placeholder="Plaats" type="text" value="<?php echo set_value('city',@$sPlaats); ?>" /><?php echo form_error('city'); ?></td><br/>
+							<td><input class="form-control" name="city" placeholder="Plaats" type="text" value="<?php echo set_value('city',@$user['Plaats']); ?>" /><?php echo form_error('city'); ?></td><br/>
                                                         
 						</tr>
                                                 <tr>
-							<td><input class="form-control" name="zipcode" placeholder="Postcode" type="Number" value="<?php echo set_value('zipcode',@$iPostcode); ?>" /><?php echo form_error('zipcode'); ?></td><br/>
+							<td><input class="form-control" name="zipcode" placeholder="Postcode" type="Number" value="<?php echo set_value('zipcode',@$user['Postcode']); ?>" /><?php echo form_error('zipcode'); ?></td><br/>
                                                         
 						</tr>
                                                 <tr>
-                                                    <td><input class="form-control" name="phone" placeholder="Telefoon" type="tel" value="<?php echo set_value('phone',@$nTelefoon); ?>" /><?php echo form_error('phone'); ?></td><br/>
+                                                    <td><input class="form-control" name="phone" placeholder="Telefoon" type="tel" value="<?php echo set_value('phone',@$user['Telefoonnr']); ?>" /><?php echo form_error('phone'); ?></td><br/>
                                                         
 						</tr>
                                                 <tr>
-							<td><input class="form-control" name="cellphone" placeholder="Gsm" type="tel" value="<?php echo set_value('cellphone',@$nGsm); ?>" /><?php echo form_error('cellphone'); ?></td><br/>
+							<td><input class="form-control" name="cellphone" placeholder="Gsm" type="tel" value="<?php echo set_value('cellphone',@$user['Gsmnr']); ?>" /><?php echo form_error('cellphone'); ?></td><br/>
                                                         
 						</tr>
 						<tr>
-							<td><input class="form-control" name="email" placeholder="Email" type="text" value="<?php echo set_value('email',@$sEmail); ?>" /><?php echo form_error('email'); ?></td><br/>
+							<td><input class="form-control" name="email" placeholder="Email" type="text" value="<?php echo set_value('email',@$user['Email']); ?>" /><?php echo form_error('email'); ?></td><br/>
                                                         
 						</tr>
 						<tr>
-                                                    <td><input class="form-control" name="dob" placeholder="Geboortedatum" type="date" value="<?php echo set_value('dob',@$dGeboortedatum); ?>"/><?php echo form_error('dob'); ?></td><br/>
+                                                    <td><input class="form-control" name="dob" placeholder="Geboortedatum" type="date" value="<?php echo set_value('dob',@$user['Geboortedatum']); ?>"/><?php echo form_error('dob'); ?></td><br/>
                                                         
                                                 </tr>
                                                 <tr>
-                                                    <td><input class="form-control" name="gender" placeholder="Geslacht" type="text" value="<?php echo set_value('gender',@$sGeslacht); ?>"/><?php echo form_error('gender'); ?></td><br/>
+                                                    <td><input class="form-control" name="gender" placeholder="Geslacht" type="text" value="<?php echo set_value('gender',@$user['Geslacht']); ?>"/><?php echo form_error('gender'); ?></td><br/>
                                                     
                                                 </tr>   
 						<tr>
@@ -178,7 +162,7 @@
 						</tr>
 					</table>
 				</form>
-			
+			<?php endforeach; ?>
                         
     
                 <p><a href="<?php echo site_url('personeel'); ?>"><img border="0" alt="Toevoegen" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/left_round.png" width="50" height="50"></a></p>

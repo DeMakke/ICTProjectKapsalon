@@ -187,12 +187,9 @@
             </table>
             </form>
             
-            <table class="tabelafspraak">
+            <table class="tabelafspraak"><hr/>
                 <tr>
-                    <td><center><h3>Tijd</h3></center></td>
-                    <td><center><h3>Klant</h3></center></td>
-                    <td><center><h3>Behandeling</h3></center></td>
-                    <td><center><h3>Kapster</h3></center></td>
+                    <td>blabla</td>
                 </tr>
                 <?php 
                 

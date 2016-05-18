@@ -247,16 +247,27 @@ ul.alert-dropdown {
     
 }
 #typeSelect{
-    width:50%;
+    width:60%;
     margin-top: -30px;
 }
 #persSelect{
     width:60%;
-    margin-top: -30px;
+/*    margin-top: -30px;*/
 }
 #maandSelect{
     width:60%;
-    margin-top: -30px;
+    /*margin-top: -30px;*/
+}
+#dagSelect{
+    width:60%;
+    /*margin-top: -30px;*/
+}
+.buttonAfspraak{
+    margin-left:120px;
+}
+#uurSelect{
+    width:60%;
+    /*margin-top: -30px;*/
 }
 
 

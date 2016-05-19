@@ -13,9 +13,9 @@
     <title>Welkom <?= $this->session->userdata('username') ?></title>
     
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
-2 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-3 <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-4 <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -119,31 +119,29 @@
                 Ga naar de tab afspraak om je afspraken te bekijken en te beheren<br/><br/>
                 Dit is het admingedeelte, hier kunnen de ingelogde klanten dus nooit opgeraken...<br/>
                 Voor hun is er een aparte zone voorzien met enkel de benodigde functies<br/></p></center><br/>
-            <center><h4>Aantal geregistreerde Klanten</h4></center>
-            <center><div id="myfirstchart" style="height: 250px; width: 60%;"></div><hr/></center>
-            <center><img src="<?php echo base_url(); ?>/assets/img/admin.png" width="150"height="150"/></center>
-            
-            
+            <center><h4>Aantal geregistreerde Klanten / Gemaakte afspraken</h4></center>
+            <center><div id="grafiek" style="height: 250px; width: 60%;"></div><hr/></center>
+            <center><img src="<?php echo base_url(); ?>/assets/img/admin.png" width="150"height="150"/></center> 
             <script>
                 new Morris.Area({
                 // ID of the element in which to draw the chart.
-                 element: 'myfirstchart',
+                 element: 'grafiek',
                 // Chart data records -- each entry in this array corresponds to a point on
                 // the chart.
                 data: [
-                     { year: '2012', Aantal: 20},
-                     { year: '2013', Aantal: 12},
-                     { year: '2014', Aantal: 22},
-                     { year: '2015', Aantal: 26},
-                     { year: '2016', Aantal: <?php echo $query ?> }
+                     { year: '2012', Aantal: 20, Afspraken: 3 },
+                     { year: '2013', Aantal: 12, Afspraken: 14 },
+                     { year: '2014', Aantal: 22, Afspraken: 26 },
+                     { year: '2015', Aantal: 26, Afspraken: 30 },
+                     <?php echo '{ year: "'.date("Y").'", Aantal: '.$query.', Afspraken: '.$query1.'}'  ?>
                 ],
                 // The name of the data record attribute that contains x-values.
                 xkey: 'year',
                 // A list of names of data record attributes that contain y-values.
-                ykeys: ['Aantal'],
+                ykeys: ['Aantal','Afspraken'],
                 // Labels for the ykeys -- will be displayed when you hover over the
                 // chart.
-                labels: ['Aantal']
+                labels: ['Aantal','Afspraken']
                 });
             </script>
 

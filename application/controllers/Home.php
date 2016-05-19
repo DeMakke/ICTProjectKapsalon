@@ -20,7 +20,11 @@ class Home extends CI_Controller
     public function index() {
         
         $this->load->model('Grafiekadmin_model');
-        $data['query'] = $this->Grafiekadmin_model->count_all();
+        $data = array(
+                'query' => $this->Grafiekadmin_model->count_all(),
+                'query1' => $this->Grafiekadmin_model->count_afspraken()   
+            );
+                
         $this->load->view("home",$data);
     }
     /**

@@ -18,4 +18,9 @@ class Grafiekadmin_model extends CI_Model{
         
         return $this->db->count_all_results();
     }
+    function count_afspraken(){
+        $this->db->select('*');
+        $this->db->from('tblafspraak');
+        return $this->db->count_all_results();
+    }
 }

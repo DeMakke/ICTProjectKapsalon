@@ -23,10 +23,9 @@ class afspraak_model extends CI_Model
     public function getKlant($id){
         $this->db->select('tblklant.username');
         $this->db->from('tblklant');
-        $this->db->join('tblafspraak', 'tblklant.id_user = tblafspraak.id_user');
+        $this->db->join('tblafspraak', 'tblklant.id_user = tblafspraak.id_user','inner');
         $this->db->where('id_user',$id);
-        $klant = $this->db->get();
-        return $klant;
+        return $this->db->get();
     }
     
     public function getBehandeling($id){
@@ -56,10 +55,9 @@ class afspraak_model extends CI_Model
     }
     
     public function getAantalAfspraken($id){
-        $this->db->select('count(*)');
+        $this->db->select('*');
         $this->db->from('tblafspraak');
         $this->db->where('id_user',$id);
-        $aantalAfspraken = $this->db->get();
-        return $aantalAfspraken;
+        return $this->db->count_all_results();
     }
 }

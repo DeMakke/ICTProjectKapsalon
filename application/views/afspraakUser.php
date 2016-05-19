@@ -115,6 +115,7 @@
                     <td>
                         <center>
                             <select id="typeSelect" name="typeSelect" onchange="showSelect('persSelect')" required>
+                                <option class="placeholder" selected disabled value="">Kies een behandeling</option>
                             <?php foreach($behandelingen as $behandeling): ?>
                         
                                 <option value= "<?php echo $behandeling->BehandelingID;?>"><?php echo $behandeling->Type;?></option>
@@ -189,9 +190,15 @@
             
             <table class="tabelafspraak"><hr/>
                 <tr>
-                    <td><h4>mijn afspraken</h4></td>
+                    <td colspan="5"><center><h3><u>Mijn Afspraken</u></h3></center></td>
                 </tr>
-                
+                <tr>
+                    <td><h4>Naam:</h4></td>
+                    <td><h4>Datum:</h4></td>
+                    <td><h4>Uur:</h4></td>
+                    <td><h4>Behandeling:</h4></td>
+                    <td><h4>Kapster:</h4></td>
+                </tr>
                  <?php foreach($afspraak as $row): ?>
                         <tr>
                             <td><?php echo $row->username;?></td>

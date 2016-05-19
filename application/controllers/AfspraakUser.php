@@ -42,13 +42,13 @@ class AfspraakUser extends CI_Controller{
             $uur = $_POST['uurSelect'];
             
             //uur en minuten converteren voor mysql
-            $dateArray = explode(":",$uur); //uur en minuten opsplitsen
-            $tijd = mktime($dateArray['0'], $dateArray['1'],0,0);
+            $uurArray = explode(":",$uur); //uur en minuten opsplitsen
+            $tijd = mktime($uurArray['0'], $uurArray['1'],0,0);
             
             //weekdag naar datum converteren voor mysql
-            $huidigeDag = date('j');
-            $dagBerekening = $dag + intval($huidigeDag);
-            $datum = mktime(0,0,0,0,$dagBerekening);
+            $datumArray = getdate();
+            $dagBerekening = $dag + $datumArray['mday'];
+            $datum = mktime(0,0,0,$datumArray['mon'],$dagBerekening,$datumArray['year']);
             
             $afspraak = array(
             'BehandelingID' => $_POST['typeSelect'],

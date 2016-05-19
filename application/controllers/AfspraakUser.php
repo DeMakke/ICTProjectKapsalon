@@ -20,21 +20,23 @@ class AfspraakUser extends CI_Controller{
         $this->load->model('personeel_model');
     }
     
-    public function index(){
-        $id = $this->uri->segment(3);
-        
-//        $id = $this->session->userdata('usersessie')['id_user'];
+    public function index(){ 
+        $id = $this->session->userdata('usersessie')['id_user'];
         
         $data['behandelingen'] = $this->afspraak_model->toonBehandeling()->result();
         $data['personeel'] = $this->personeel_model->get_all($id)->result();
         
         //alle data in commentaar is om de bestaande afspraken in de 2de tabel te tonen
         
-//        $data['afspraakKlant'] = $this->afspraak_model->getKlant($id)->result();
+        $data['afspraakKlant'] = $this->afspraak_model->getKlant($id)->result();
 //        $data['afspraakBehandeling'] = $this->afspraak_model->getBehandeling($id)->result();
 //        $data['afspraakTijd'] = $this->afspraak_model->getTijd($id)->result();
 //        $data['afspraakKapster'] = $this->afspraak_model->getKapster($id)->result();
-//        $data['aantal'] = $this->afspraak_model->getAantalAfspraken($id)->result();
+        $data['aantal'] = $this->afspraak_model->getAantalAfspraken($id);
+        $this->afspraak($data,$id);
+    }
+    
+    public function afspraak($data,$id){
         
         if (isset($_POST['btn-afspraak'])){
             
@@ -53,8 +55,7 @@ class AfspraakUser extends CI_Controller{
             $afspraak = array(
             'BehandelingID' => $_POST['typeSelect'],
             'KapsterID' => $_POST['persSelect'],
-            //'id_user' => $id, -> variabele bovenaan index() omdat id nu ook in model gebruikt zal worden
-            'id_user' => $this->session->userdata('usersessie')['id_user'],
+            'id_user' => $id,
             'Tijd' => date("H:i:s",$tijd),
             'AfspraakDag' => date("Y-m-d",$datum),
             );

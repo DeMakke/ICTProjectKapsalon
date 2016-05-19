@@ -27,6 +27,7 @@ class afspraak_model extends CI_Model
         $this->db->join('tblbehandeling','tblafspraak.BehandelingID = tblbehandeling.BehandelingID');
         $this->db->join('tblpersoneel','tblafspraak.KapsterID = tblpersoneel.KapsterID');
         $this->db->where('tblafspraak.id_user',$id);
+        $this->db->order_by('tblafspraak.AfspraakDag, tblafspraak.Tijd','asc');
         return $this->db->get();
     }
     

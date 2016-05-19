@@ -189,21 +189,18 @@
             
             <table class="tabelafspraak"><hr/>
                 <tr>
-                    <td>blabla</td>
+                    <td><h4>mijn afspraken</h4></td>
                 </tr>
-                <?php 
                 
-                $j = 0;
-                //while($j < $aantal): ?>
-                <tr>
-                    <td><center><?php //echo $afspraakTijd; ?></center></td>
-                    <td><center><?php //echo $afspraakKlant; ?></center></td>
-                    <td><center><?php //echo $afspraakBehandeling; ?></center></td>
-                    <td><center><?php //echo $afspraakKapster; ?></center></td>
-                </tr>
-                <?php 
-                $j++;
-                //endwhile; ?>
+                 <?php foreach($afspraak as $row): ?>
+                        <tr>
+                            <td><?php echo $row->username;?></td>
+                            <td><?php echo $row->AfspraakDag;?></td>
+                            <td><?php echo $row->Tijd;?></td>
+                            <td><?php echo $row->Type;?></td>
+                            <td><?php echo $row->Voornaam;?></td>
+                        </tr>
+                     <?php endforeach; ?> 
             </table>
         </div>
         

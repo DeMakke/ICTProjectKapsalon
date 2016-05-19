@@ -108,7 +108,27 @@
 
             </div>
             <!-- /.container-fluid -->
-            
+            <table class="tabelafspraak"><hr/>
+                <tr>
+                    <td colspan="5"><center><h3><u>Alle Afspraken</u></h3></center></td>
+                </tr>
+                <tr>
+                    <td><h4>Naam:</h4></td>
+                    <td><h4>Datum:</h4></td>
+                    <td><h4>Uur:</h4></td>
+                    <td><h4>Behandeling:</h4></td>
+                    <td><h4>Kapster:</h4></td>
+                </tr>
+                 <?php foreach($afspraken as $row): ?>
+                        <tr>
+                            <td><?php echo $row->username;?></td>
+                            <td><?php echo $row->AfspraakDag;?></td>
+                            <td><?php echo $row->Tijd;?></td>
+                            <td><?php echo $row->Type;?></td>
+                            <td><?php echo $row->Voornaam;?></td>
+                        </tr>
+                     <?php endforeach; ?> 
+            </table>
 
         </div>
         <!-- /#page-wrapper -->

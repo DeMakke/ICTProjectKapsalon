@@ -31,6 +31,16 @@ class afspraak_model extends CI_Model
         return $this->db->get();
     }
     
+    public function toonAfspraakAdmin(){
+        $this->db->select('tblafspraak.AfspraakDag,tblklant.username, tblafspraak.Tijd,tblbehandeling.Type, tblpersoneel.Voornaam');
+        $this->db->from('tblafspraak');
+        $this->db->join('tblklant', 'tblklant.id_user = tblafspraak.id_user');
+        $this->db->join('tblbehandeling','tblafspraak.BehandelingID = tblbehandeling.BehandelingID');
+        $this->db->join('tblpersoneel','tblafspraak.KapsterID = tblpersoneel.KapsterID');
+        $this->db->order_by('tblafspraak.AfspraakDag, tblafspraak.Tijd','asc');
+        return $this->db->get();
+    }
+    
 //    public function getBehandeling($id){
 //        $this->db->select('tblbehandeling.Type');
 //        $this->db->from('tblbehandeling');

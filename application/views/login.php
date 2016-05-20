@@ -14,9 +14,11 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url(); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
+    <script src="<?php echo base_url(); ?>/assets/js/jquery.js"></script>
 
     <!-- Custom CSS -->
     <link href="<?php echo base_url(); ?>/assets/css/agency.css" rel="stylesheet">
+    
 
     <!-- Custom Fonts -->
     <link href="<?php echo base_url(); ?>/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -346,7 +348,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <p class="large text-muted">
-                        Kreatief kiest ervoor om met een evenwichtig team te werken, waarin elk lid zijn sterktes en specialisaties heeft.<br />
+                        Ons Kapsalon kiest ervoor om met een evenwichtig team te werken, waarin elk lid zijn sterktes en specialisaties heeft.<br />
                         Zo proberen we te zoeken naar de ideale match tussen ons en jou als klant.
                     </p>
                 </div>
@@ -448,7 +450,7 @@
                     <ul class="list-inline quicklinks">
                         <li><a href="#" data-toggle="modal" data-target="#myModal">Privacy Policy</a>
                         </li>
-                        <li><a href="#">Terms of Use</a>
+                        <li><a href="#" data-toggle="modal" data-target="">Terms of Use</a>
                         </li>
                     </ul>
                      <!-- Modal -->
@@ -479,13 +481,39 @@
       
                             </div>
                     </div>
+                     
+                    <?php if ($this->session->flashdata('flash_data')) { ?>
+                            <?= $this->session->flashdata('flash_data') ?> 
+                    <?php } ?>
+                     
+                    <div class="modal fade" id="loginModal" role="dialog">
+                            <div class="modal-dialog">
+    
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h3 class="modal-title">Fout bij inloggen!</h3>
+                                    </div>
+                                <div class="modal-body">
+                                    <p><img src="https://cdn1.iconfinder.com/data/icons/ui-icons-2/512/wrong-01-512.png" width="50" height="50"/><br/><br/> De gebruikersnaam of wachtwoord dat je hebt opgegeven bestaat niet in onze database!
+                                        <b>&nbsp;Probeer opnieuw</b></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+                                </div>
+                                </div>
+      
+                            </div>
+                    </div>
+                     
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- jQuery -->
-    <script src="<?php echo base_url(); ?>/assets/js/jquery.js"></script>
+    
 
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url(); ?>/assets/js/bootstrap.min.js"></script>

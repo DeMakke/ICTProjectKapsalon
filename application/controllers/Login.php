@@ -13,7 +13,6 @@ class Login extends CI_Controller
         $this->load->model("login_model", "login");
         if(!empty($_SESSION['id_user']))
             redirect('home');
-        
     }
 
     public function index() {
@@ -40,8 +39,8 @@ class Login extends CI_Controller
                 }
 
             } else {
-                $this->session->set_flashdata('flash_data', 'Username or password is wrong!');
-                redirect('login');
+                $this->session->set_flashdata('flash_data', '<script>$(document).ready(function(){$("#loginModal").modal("show");});</script>');
+                redirect('login');    
             }
         }
 

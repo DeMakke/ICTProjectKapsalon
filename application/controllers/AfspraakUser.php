@@ -26,13 +26,8 @@ class AfspraakUser extends CI_Controller{
         $data['behandelingen'] = $this->afspraak_model->toonBehandeling()->result();
         $data['personeel'] = $this->personeel_model->get_all($id)->result();
         
-        //alle data in commentaar is om de bestaande afspraken in de 2de tabel te tonen
-        
         $data['afspraak'] = $this->afspraak_model->getAfspraak($id)->result();
-//        $data['afspraakBehandeling'] = $this->afspraak_model->getBehandeling($id)->result();
-//        $data['afspraakTijd'] = $this->afspraak_model->getTijd($id)->result();
-//        $data['afspraakKapster'] = $this->afspraak_model->getKapster($id)->result();
-        //$data['aantal'] = $this->afspraak_model->getAantalAfspraken($id);
+
         $this->afspraak($data,$id);
     }
     

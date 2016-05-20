@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+  
 
     <title>Welkom <?= $this->session->userdata('username') ?></title>
 
@@ -33,7 +34,7 @@
 
 </head>
 
-<body>
+<body onload="setInterval(function() {window.location.reload();}, 120000);">
 
     <div id="wrapper">
 
@@ -107,8 +108,9 @@
                
 
             </div>
+            <p><img src="<?php echo base_url(); ?>/assets/img/loading.gif" width="25" height="25" />&nbsp;Deze pagina vernieuwt zich automatisch na <b>2</b> minuten</p>
             <!-- /.container-fluid -->
-            <table class="tabelafspraak"><hr/>
+            <table class="tabelafspraak" style="width: 100%;"><hr/>
                 <tr>
                     <td colspan="5"><center><h3><u>Alle Afspraken</u></h3></center></td>
                 </tr>
@@ -128,8 +130,8 @@
                             <td><?php echo $row->Voornaam;?></td>
                         </tr>
                      <?php endforeach; ?> 
-            </table>
-
+                </table>
+            
         </div>
         <!-- /#page-wrapper -->
 

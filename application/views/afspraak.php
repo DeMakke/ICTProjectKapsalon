@@ -115,21 +115,26 @@
                     <td colspan="5"><center><h3><u>Alle Afspraken</u></h3></center></td>
                 </tr>
                 <tr>
+                    <td><h4>Gebruiker:</h4></td>
                     <td><h4>Naam:</h4></td>
                     <td><h4>Datum:</h4></td>
                     <td><h4>Uur:</h4></td>
                     <td><h4>Behandeling:</h4></td>
+                    <td><h4>Prijs:</h4></td>
                     <td><h4>Kapster:</h4></td>
                 </tr>
-                 <?php foreach($afspraken as $row): ?>
+                    <?php foreach($afspraak as $row): ?>
                         <tr>
                             <td><?php echo $row->username;?></td>
+                            <td><?php echo $row->klantAchternaam.' '.$row->klantVoornaam; ?></td>
                             <td><?php echo $row->AfspraakDag;?></td>
                             <td><?php echo $row->Tijd;?></td>
                             <td><?php echo $row->Type;?></td>
-                            <td><?php echo $row->Voornaam;?></td>
+                            <td><?php echo $row->Prijs;?></td>
+                            <td><?php echo $row->persVoornaam.' '.$row->persAchternaam;?></td>
+                            <td><a href="<?php echo base_url()."/index.php/afspraak?id=".$row->afspraakID; ?>" class="btn btn-danger" onclick="return confirm('Are you sure to Delete?')">Delete</td>
                         </tr>
-                     <?php endforeach; ?> 
+                    <?php endforeach; ?>
                 </table>
             
         </div>

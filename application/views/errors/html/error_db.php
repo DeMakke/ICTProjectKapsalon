@@ -57,15 +57,25 @@ p {
 </head>
 <body>
 	<div id="container">
-            <center><p><img src="https://cdn1.iconfinder.com/data/icons/ui-icons-2/512/wrong-01-512.png" width="100" height="100"/> </p></center><br/>
+            <h2> &nbsp;Er heeft zich een algemene database fout voorgedaan! dit kan ontstaan uit de volgende problemen: </h2>
+            <ul>
+                <li>De gebruiker die u wenst te registreren bestaat al in onze database</li>
+                <li>De afspraak die u wenst te maken is al bezet</li>
+                <li>U heeft uw profiel nog niet volledig aangevuld: <u><a href='<?php echo site_url('profielUser'); ?>'/>Ga naar mijn profiel</u></li>
+            </ul>
             
-                
-            <center> <h1>Oops! </h1>
-                
-                
-                <b>De gebruiker die u wenst te registreren is al in ons systeem bekend, probeer een andere gebruikersnaam!</b><br/></center>
-            <center><a href="<?php echo site_url('Registreer'); ?>"><img border="0" alt="Toevoegen" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/left_round.png" width="50" height="50"></a></center>
-                
+            <!--<p><a href="<?php echo site_url('login'); ?>"><img border="0" alt="Toevoegen" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/left_round.png" width="50" height="50"></a></p>-->
+            
+            <table align='center'>
+                <tr>
+                    <td><center><a href="<?php echo site_url('login'); ?>"><img border="0" alt="Toevoegen" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/left_round.png" width="50" height="50"></a></center></td>
+                    <td><center><a href="<?php echo site_url('afspraakUser'); ?>"><img border="0" alt="Toevoegen" src="https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/right_round.png" width="50" height="50"></a></center></td>
+                </tr>
+                <tr>
+                    <td><center>Homepagina</center></td>
+                    <td><center>Afspraakpagina</center></td>
+                </tr>
+            </table>
 	</div>
 </body>
 </html>

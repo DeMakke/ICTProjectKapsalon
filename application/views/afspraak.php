@@ -132,7 +132,6 @@
                             <td><?php echo $row->Type;?></td>
                             <td><?php echo $row->Prijs;?></td>
                             <td><?php echo $row->persVoornaam.' '.$row->persAchternaam;?></td>
-                            <td><a href="<?php echo base_url()."/index.php/afspraak?id=".$row->afspraakID; ?>" class="btn btn-danger" onclick="return confirm('Are you sure to Delete?')">Delete</td>
                         </tr>
                     <?php endforeach; ?>
                 </table>

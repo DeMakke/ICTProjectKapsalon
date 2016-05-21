@@ -21,15 +21,7 @@ class Afspraak extends CI_Controller{
     public function index(){
         $data['afspraak'] = $this->afspraak_model->getAlleAfspraken()->result();
         
-        $id = $this->uri->segment(3);
-        
-        if(isset($_GET['afspraakID'])){
-            $id=$GET_['afspraakID'];
-            $this->afspraak_model->row_delete($id);
-            redirect('Afspraak');
-        }else{
-        $this->load->view("afspraak",$data);
-        }
+        $this->load->view("afspraak",$data);       
     }
 }
 

@@ -34,7 +34,7 @@ class afspraak_model extends CI_Model
     }
     //alle afspraken van alle users tonen met benodigde details
     public function getAlleAfspraken(){
-        $this->db->select('tblafspraak.afspraakID,tblklant.username, tblklant.Voornaam AS klantVoornaam, tblklant.Achternaam AS klantAchternaam, '
+        $this->db->select('tblklant.username, tblklant.Voornaam AS klantVoornaam, tblklant.Achternaam AS klantAchternaam, '
                 . 'tblafspraak.AfspraakDag,tblafspraak.Tijd, tblbehandeling.Type, tblbehandeling.Prijs,'
                 . ' tblpersoneel.Voornaam as persVoornaam, tblpersoneel.Achternaam AS persAchternaam');
         $this->db->from('tblafspraak');
@@ -43,11 +43,5 @@ class afspraak_model extends CI_Model
         $this->db->join('tblpersoneel','tblafspraak.KapsterID = tblpersoneel.KapsterID');
         $this->db->order_by('tblafspraak.AfspraakDag, tblafspraak.Tijd','asc');
         return $this->db->get();
-    }
-    
-    public function row_delete($id){
-        //$id=$_GET['id'];
-        $this->db->where('afspraakID',$id);
-        $this->db->delete('tblafspraak');
     }
 }

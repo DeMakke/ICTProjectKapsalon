@@ -30,7 +30,7 @@ class PersoneelUpdaten extends CI_Controller{
     {
         $id2=$_GET['id'];
         $this->dataUser['users'] = $this->personeel_model->getSinglePersonel($id2);
-        $id = $this->uri->segment(3);
+        
         //validatie regels
         $this->form_validation->set_rules('name', 'Voornaam','trim|required');
         $this->form_validation->set_rules('surname', 'Achternaam','trim|required');
@@ -65,7 +65,7 @@ class PersoneelUpdaten extends CI_Controller{
                 'Geslacht' => $this->input->post('gender'),
             );
             
-            if ($this->personeel_model->update_personel($id,$data)) {
+            if ($this->personeel_model->update_personel($id2,$data)) {
                 $this->session->set_flashdata('flashSuccess','<center><br/><img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Light_green_check.svg" width="30" height="30"/><h1>Proficiat! U bent succesvol geregistreerd</h1><center>');
                     header('Refresh: 5; URL=');
                     redirect('Personeel');

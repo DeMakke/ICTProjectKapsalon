@@ -20,22 +20,12 @@ class klantadmin_model extends CI_Model
      * query voor alle gegevens op te halen
      */
         
-    public function get_all($id){
+    public function get_all(){
        
         return $this->db->get_where('tblklant');
        
     }
-    /**
-     * 
-     * @param int $id
-     * query voor een rij te verwijderen op basis van ID tabel tblklant
-     */
     
-    function row_delete($id){
-        $id=$_GET['id'];
-        $this->db->where('id_user',$id);
-        $this->db->delete('tblklant');
-    }
     /**
      * 
      * @param int $id
@@ -43,7 +33,7 @@ class klantadmin_model extends CI_Model
      */
     
     function row_delete_login($id){
-        $id=$_GET['id'];
+        
         $this->db->where('id_user',$id);
         $this->db->delete('login');
     }

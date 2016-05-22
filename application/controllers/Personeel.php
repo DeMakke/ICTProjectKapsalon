@@ -27,8 +27,7 @@ class Personeel extends CI_Controller{
      * Toont alle personeelgegevens
      */
     function toonPersoneel(){
-        $id = $this->uri->segment(3);
-        $data['query'] = $this->personeel_model->get_all($id)->result();
+        $data['query'] = $this->personeel_model->get_all()->result();
         $this->load->view("personeel",$data);
     }
 }

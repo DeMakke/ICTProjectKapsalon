@@ -28,15 +28,13 @@ class Klanten extends CI_Controller{
      * haalt alle klanten uit database;
      * als er een ID gekoppeld is, verwijder rij
      */
-    public function verwijderKlant(){
-        
-        $id = $this->uri->segment(3);
-        $data['query'] = $this->klantadmin_model->get_all($id)->result();
+    public function verwijderKlant()
+        {
+        $data['query'] = $this->klantadmin_model->get_all()->result();
         $this->load->view('klanten',$data);
         
         if(isset($_GET['id'])){
             $id=$_GET['id'];
-            $this->klantadmin_model->row_delete($id);
             $this->klantadmin_model->row_delete_login($id);
             redirect('klanten');
         }

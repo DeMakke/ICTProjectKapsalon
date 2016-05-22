@@ -10,29 +10,47 @@ class personeel_model extends CI_Model
 {
     function __construct()
     {
-        // Roep de constructor op
+        
         parent::__construct();
     }
     
-    //insert in tblklant tabel
+    /**
+     * 
+     * @param type $data
+     * @return type
+     * data in personeel tabel toevoegen
+     */
     function insertIntoPersoneel($data)
     {
         return $this->db->insert('tblpersoneel',$data);
     }
-    //naam veranderen
-    function get_all($id){
     
-       
+    /**
+     * 
+     * @return type
+     * Haalt alle personeel op in database
+     */
+    function get_all()
+    {
         return $this->db->get_where('tblpersoneel');
     }
     
-    //delete functie
+    /**
+     * 
+     * @param type $id
+     * verwijderen uit tblpersoneel op basis van ID
+     */
     function row_delete($id){
-        $id=$_GET['id'];
+        
         $this->db->where('kapsterID',$id);
         $this->db->delete('tblpersoneel');
     }
-    
+    /**
+     * 
+     * @param type $id
+     * @return type
+     * Haalt 1 persoon op uit tblpersoneel op basis van ID
+     */
     function getSinglePersonel($id){
         
         $this->db->select('*');
@@ -44,18 +62,18 @@ class personeel_model extends CI_Model
         //stuurt query uit als array
         return $query->result_array();
     }
-    //update functie
+    /**
+     * 
+     * @param type $id
+     * @param type $data
+     * @return type
+     * update personeel op basis van ID en toegevoegde data
+     */
     function update_personel($id,$data){
-        $id=$_GET['id'];
+        
         $this->db->where('KapsterID',$id);
         return $this->db->update('tblpersoneel',$data);
     }
-    
-    function placeholders($id)
-    {
-        $id=$_GET['id'];
-        $this->db->get_where('tblpersoneel','KapsterID ='.$id);
-    }
-    
+       
     
 }

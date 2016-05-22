@@ -20,8 +20,23 @@ class Afspraak extends CI_Controller{
     }
     public function index(){
         $data['afspraak'] = $this->afspraak_model->getAlleAfspraken()->result();
+
+        $this->load->view("afspraak",$data);
         
-        $this->load->view("afspraak",$data);       
+        if(isset($_POST['delete'])){
+            
+            $deleteData = $_POST['delete'];
+            $Delete = explode('/', $deleteData);
+            
+            $KapsterID = $Delete[0];
+            $AfspraakDag = $Delete[1];
+            $Tijd = $Delete[2];
+            
+            $this->afspraak_model->row_delete($KapsterID,$AfspraakDag,$Tijd);
+            redirect('afspraak');
+        }
+        
+               
     }
 }
 

@@ -181,7 +181,7 @@
                                 Donderdag: 09:00 - 19:00 </br>
                                 Vrijdag: 09:00 - 19:00 </br>
                                 Zaterdag: 09:00 - 19:00 </br>
-                                Zondag: 09:00 - 12:00 </br>
+                                Zondag: 09:00 - 19:00 </br>
                             </p><br/>
                         </div>
                     </div>

@@ -114,7 +114,7 @@
             <form action="" method="post">
             <table class="tabelafspraak" style="width: 100%;"><hr/>
                 <tr>
-                    <td colspan="5"><center><h3><u>Alle Afspraken</u></h3></center></td>
+                    <td colspan="8"><center><h3><u>Alle Afspraken</u></h3></center></td>
                 </tr>
                 <tr>
                     <td><h4>Gebruiker:</h4></td>
@@ -124,6 +124,7 @@
                     <td><h4>Behandeling:</h4></td>
                     <td><h4>Prijs:</h4></td>
                     <td><h4>Kapster:</h4></td>
+                    <td>&nbsp;</td>
                 </tr>
                     <?php foreach($afspraak as $row): ?>
                         <tr>

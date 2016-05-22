@@ -110,6 +110,8 @@
             </div>
             <p><img src="<?php echo base_url(); ?>/assets/img/loading.gif" width="25" height="25" />&nbsp;Deze pagina vernieuwt zich automatisch na <b>2</b> minuten</p>
             <!-- /.container-fluid -->
+            
+            <form action="" method="post">
             <table class="tabelafspraak" style="width: 100%;"><hr/>
                 <tr>
                     <td colspan="5"><center><h3><u>Alle Afspraken</u></h3></center></td>
@@ -132,10 +134,12 @@
                             <td><?php echo $row->Type;?></td>
                             <td><?php echo $row->Prijs;?></td>
                             <td><?php echo $row->persVoornaam.' '.$row->persAchternaam;?></td>
+                            <td><button type="submit" class="btn btn-danger" name="delete" value="<?php echo $row->KapsterID.'/'.$row->AfspraakDag.'/'.$row->Tijd;?>" onclick="return confirm('Are you sure to Delete?')">Delete</button></td>
+                            
                         </tr>
                     <?php endforeach; ?>
                 </table>
-            
+            </form>
         </div>
         <!-- /#page-wrapper -->
 

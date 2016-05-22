@@ -35,9 +35,10 @@ class profielUserUpdaten extends CI_Controller{
      */
     function klantUpdaten()
     {
-        $this->dataUser['users'] = $this->profieluser_model->get_all();
         $data3 = $this->session->userdata('usersessie');
         $id = $data3['id_user'];
+        $this->dataUser['users'] = $this->profieluser_model->get_SingleClient($id);
+        
         $this->form_validation->set_rules('surname', 'Voornaam','trim|required');
         $this->form_validation->set_rules('name', 'Achternaam','trim|required');
         $this->form_validation->set_rules('phone', 'Telefoonnr','trim|required');

@@ -15,13 +15,12 @@ class profieluser_model extends CI_Model
     /*
      * Toont gegevens van 1 rij
      */
-    public function get_all(){
-        //haalt huidige userdata op van loginsessiee
-        $data = $this->session->userdata('usersessie');
+    public function get_SingleClient($id){
+        
         $this->db->select('*');
         $this->db->from('tblklant');
         //vergelijkt de id van de ingelogde gebruiker met deze van de database
-        $this->db->where('id_user ='.$data['id_user']);
+        $this->db->where('id_user',$id);
         //haalt gegevens op
         $query = $this->db->get();
         //stuurt query uit als array

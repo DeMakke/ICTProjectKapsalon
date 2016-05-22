@@ -21,8 +21,9 @@ class ProfielUser extends CI_Controller{
     }
     public function index(){
         //stopt alle gegevens in dataUser['users']
-        
-        $this->dataUser['users'] = $this->profieluser_model->get_all();
+        $data = $this->session->userdata['usersessie'];
+        $id = $data['id_user'];
+        $this->dataUser['users'] = $this->profieluser_model->get_SingleClient($id);
         
         if (!empty($this->dataUser['users'])) {
             $this->load->view("profielUser",$this->dataUser);

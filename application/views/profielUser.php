@@ -153,7 +153,7 @@
                         <td class="text-left"><?php echo $sGeslacht?></td>
                     </tr>
                     <tr>    
-                        <td colspan="2"><a href="<?php echo base_url()."index.php/profieluserupdaten?id=".$sUserId;?>" class="btn btn-info" onclick="return confirm('Ben je zeker dat je wil verdergaan?')">Edit</a></td>
+                        <td colspan="2"><a href="<?php echo base_url()."index.php/profieluserupdaten";?>" class="btn btn-info" onclick="return confirm('Ben je zeker dat je wil verdergaan?')">Edit</a></td>
                     </tr>
                 </tbody>
             </table>

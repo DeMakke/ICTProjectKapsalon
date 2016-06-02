@@ -22,10 +22,6 @@
                                                         <td><span class="text-danger"><?php echo form_error('username'); ?></span></td>
 						</tr>
 						<tr>
-                                                    <td><input class="form-control" name="email" placeholder="Email" type="text" value="<?php echo set_value('email'); ?>" /></td><br/>
-                                                        <td><span class="text-danger"><?php echo form_error('email'); ?></span></td>
-						</tr>
-						<tr>
                                                     <td><input class="form-control" name="password" placeholder="Wachtwoord" type="password" /></td><br/>
                                                         <td><span class="text-danger"><?php echo form_error('password'); ?></span></td>
 						</tr>

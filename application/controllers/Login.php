@@ -22,7 +22,6 @@ class Login extends CI_Controller
                 $data = [
                     'id_user' => $result->id_user,
                     'username' => $result->username,
-                    'user_email' => $result->email
                 ];
        
                 //Controleer wie toegang heeft tot het admingedeelte/usergedeelte

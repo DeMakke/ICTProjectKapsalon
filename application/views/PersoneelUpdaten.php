@@ -154,7 +154,10 @@
                                                         
                                                 </tr>
                                                 <tr>
-                                                    <td><input class="form-control" name="gender" placeholder="Geslacht" type="text" value="<?php echo set_value('gender',@$user['Geslacht']); ?>"/><?php echo form_error('gender'); ?></td><br/>
+                                                    <td><form action="<?php echo set_value('gender'); ?>">
+                                                        <input type="radio" name="gender" value="Man"> Man
+                                                        <input type="radio" name="gender" value="Vrouw"> Vrouw
+                                                        <?php echo form_error('gender'); ?></form></td><br/>
                                                     
                                                 </tr>   
 						<tr>
